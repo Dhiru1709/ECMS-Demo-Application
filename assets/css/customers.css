@@ -1,0 +1,343 @@
+/* ===========================
+   ECMS - Customer Management
+   =========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:"Segoe UI",Tahoma,Geneva,Verdana,sans-serif;
+    background:#f4f7fb;
+    color:#2f3542;
+}
+
+/* ===========================
+   Layout
+=========================== */
+
+.wrapper{
+    display:flex;
+    min-height:100vh;
+}
+
+/* ===========================
+   Sidebar
+=========================== */
+
+.sidebar{
+    width:250px;
+    background:#1f2937;
+    color:#fff;
+    display:flex;
+    flex-direction:column;
+    position:fixed;
+    left:0;
+    top:0;
+    bottom:0;
+    box-shadow:3px 0 15px rgba(0,0,0,.08);
+}
+
+.logo{
+    height:75px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:26px;
+    font-weight:700;
+    letter-spacing:1px;
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.sidebar ul{
+    list-style:none;
+    margin:20px 0;
+    padding:0;
+}
+
+.sidebar li{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    padding:15px 28px;
+    cursor:pointer;
+    transition:.25s;
+    font-size:15px;
+}
+
+.sidebar li i{
+    width:20px;
+    text-align:center;
+}
+
+.sidebar li:hover{
+    background:#374151;
+}
+
+.sidebar .active{
+    background:#2563eb;
+    border-left:4px solid #fff;
+}
+
+/* ===========================
+   Main Content
+=========================== */
+
+.main-content{
+    margin-left:250px;
+    flex:1;
+    padding:30px;
+}
+
+/* ===========================
+   Topbar
+=========================== */
+
+.topbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:30px;
+}
+
+.topbar h2{
+    font-size:28px;
+    font-weight:700;
+    margin-bottom:4px;
+}
+
+.topbar p{
+    color:#6b7280;
+    margin:0;
+}
+
+.topbar span{
+    color:#2563eb;
+    font-weight:600;
+}
+
+.topbar .btn{
+    padding:11px 22px;
+    border-radius:10px;
+    font-weight:600;
+}
+
+/* ===========================
+   Cards
+=========================== */
+
+.filter-card,
+.table-card{
+    background:#fff;
+    border-radius:14px;
+    padding:24px;
+    margin-bottom:25px;
+    box-shadow:0 8px 25px rgba(0,0,0,.06);
+}
+
+/* ===========================
+   Inputs
+=========================== */
+
+.form-control,
+.form-select,
+#businessUnit{
+    height:48px;
+    border-radius:10px;
+    border:1px solid #d8dee9;
+    transition:.2s;
+}
+
+.form-control:focus,
+.form-select:focus,
+#businessUnit:focus{
+    border-color:#2563eb;
+    box-shadow:0 0 0 .2rem rgba(37,99,235,.15);
+    outline:none;
+}
+
+#businessUnit{
+    width:100%;
+    padding:0 14px;
+    background:#fff;
+}
+
+/* ===========================
+   Buttons
+=========================== */
+
+.btn{
+    border-radius:10px;
+    transition:.25s;
+}
+
+.btn-primary{
+    background:#2563eb;
+    border:none;
+}
+
+.btn-primary:hover{
+    background:#1d4ed8;
+}
+
+.btn-success{
+    background:#16a34a;
+    border:none;
+}
+
+.btn-success:hover{
+    background:#15803d;
+}
+
+.btn-outline-primary:hover,
+.btn-outline-warning:hover,
+.btn-outline-danger:hover{
+    transform:translateY(-2px);
+}
+
+/* ===========================
+   Table
+=========================== */
+
+.table{
+    margin-bottom:0;
+}
+
+.table thead{
+    background:#f1f5f9;
+}
+
+.table thead th{
+    border:none;
+    padding:16px;
+    font-size:14px;
+    color:#475569;
+    text-transform:uppercase;
+    letter-spacing:.5px;
+}
+
+.table tbody td{
+    padding:18px 16px;
+    vertical-align:middle;
+}
+
+.table-hover tbody tr{
+    transition:.2s;
+}
+
+.table-hover tbody tr:hover{
+    background:#f8fbff;
+}
+
+/* ===========================
+   Badges
+=========================== */
+
+.badge{
+    padding:8px 14px;
+    border-radius:30px;
+    font-size:12px;
+    font-weight:600;
+}
+
+/* ===========================
+   Action Buttons
+=========================== */
+
+.table td .btn{
+    width:36px;
+    height:36px;
+    padding:0;
+    margin-right:6px;
+}
+
+/* ===========================
+   Pagination
+=========================== */
+
+.pagination{
+    margin-top:15px;
+}
+
+.page-link{
+    border:none;
+    color:#2563eb;
+    margin:0 4px;
+    border-radius:8px;
+    padding:10px 16px;
+}
+
+.page-item.active .page-link{
+    background:#2563eb;
+    border-color:#2563eb;
+}
+
+/* ===========================
+   Scrollbar
+=========================== */
+
+::-webkit-scrollbar{
+    width:8px;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#cbd5e1;
+    border-radius:10px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background:#94a3b8;
+}
+
+/* ===========================
+   Responsive
+=========================== */
+
+@media(max-width:992px){
+
+    .sidebar{
+        width:80px;
+    }
+
+    .sidebar .logo{
+        font-size:18px;
+    }
+
+    .sidebar li{
+        justify-content:center;
+        padding:18px 0;
+    }
+
+    .sidebar li span{
+        display:none;
+    }
+
+    .main-content{
+        margin-left:80px;
+    }
+
+}
+
+@media(max-width:768px){
+
+    .topbar{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:20px;
+    }
+
+    .main-content{
+        padding:20px;
+    }
+
+    .table-card{
+        overflow-x:auto;
+    }
+
+    .table{
+        min-width:900px;
+    }
+
+}
