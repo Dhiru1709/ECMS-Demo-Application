@@ -1,0 +1,197 @@
+/* ===============================
+   Global Styles
+================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: #f4f7fb;
+}
+
+/* ===============================
+   Login Page
+================================= */
+
+.login-page {
+    overflow: hidden;
+}
+
+/* ===============================
+   Left Panel
+================================= */
+
+.left-panel {
+    background: linear-gradient(135deg, #0d6efd, #3b82f6);
+    color: white;
+    padding: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.left-panel h1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    line-height: 1.3;
+}
+
+.left-panel p {
+    font-size: 18px;
+    opacity: .9;
+    line-height: 1.8;
+}
+
+/* ===============================
+   Login Card
+================================= */
+
+.login-card {
+
+    width: 430px;
+
+    background: white;
+
+    padding: 45px;
+
+    border-radius: 15px;
+
+    box-shadow:
+            0 12px 35px rgba(0,0,0,.12);
+
+}
+
+/* ===============================
+   Logo
+================================= */
+
+.logo {
+
+    width: 75px;
+
+    height: 75px;
+
+    margin: auto;
+
+    border-radius: 50%;
+
+    background: #0d6efd;
+
+    color: white;
+
+    font-size: 30px;
+
+    font-weight: bold;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+/* ===============================
+   Labels
+================================= */
+
+.form-label {
+
+    font-weight: 600;
+
+    color: #444;
+
+}
+
+/* ===============================
+   Inputs
+================================= */
+
+.form-control {
+
+    height: 50px;
+
+    border-radius: 10px;
+
+}
+
+.input-group-text {
+
+    border-radius: 10px 0 0 10px;
+
+    background: white;
+
+}
+
+/* ===============================
+   Buttons
+================================= */
+
+.btn-primary {
+
+    height: 50px;
+
+    border-radius: 10px;
+
+    font-size: 17px;
+
+    font-weight: 600;
+
+    transition: .3s;
+
+}
+
+.btn-primary:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 8px 20px rgba(13,110,253,.30);
+
+}
+
+/* ===============================
+   Links
+================================= */
+
+a {
+
+    text-decoration: none;
+
+}
+
+a:hover {
+
+    text-decoration: underline;
+
+}
+
+/* ===============================
+   Footer
+================================= */
+
+small {
+
+    color: gray;
+
+}
+
+/* ===============================
+   Responsive
+================================= */
+
+@media(max-width:991px){
+
+.login-card{
+
+    width:95%;
+
+    margin:20px;
+
+}
+
+}
