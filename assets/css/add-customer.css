@@ -1,0 +1,13 @@
+@import url("customer-details.css");
+
+.summary-card{
+    border-left:6px solid #16a34a;
+}
+
+.page-header h2{
+    color:#16a34a;
+}
+
+.btn-success{
+    background:#16a34a;
+}
