@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECMS | Contracts</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/contracts.css">
+</head>
+
+<body>
+
+<div class="wrapper">
+
+    <!-- ===========================================
+    Sidebar
+    =========================================== -->
+    <aside class="sidebar">
+        <div class="logo">
+            ECMS
+        </div>
+
+        <ul>
+            <li>
+                <i class="fa-solid fa-chart-line"></i>
+                Dashboard
+            </li>
+            <li>
+                <i class="fa-solid fa-users"></i>
+                Customers
+            </li>
+            <li class="active">
+                <i class="fa-solid fa-file-signature"></i>
+                Contracts
+            </li>
+            <li>
+                <i class="fa-solid fa-file-invoice-dollar"></i>
+                Invoices
+            </li>
+            <li>
+                <i class="fa-solid fa-chart-column"></i>
+                Reports
+            </li>
+            <li>
+                <i class="fa-solid fa-gear"></i>
+                Settings
+            </li>
+        </ul>
+    </aside>
+
+    <!-- ===========================================
+    Main Content
+    =========================================== -->
+    <main class="main-content">
+
+        <!-- ===========================================
+        Header
+        =========================================== -->
+        <div class="page-header">
+            <div>
+                <h2>Contract Management</h2>
+                <p>
+                    Dashboard /
+                    Contracts
+                </p>
+            </div>
+
+            <div class="header-actions">
+                <button class="btn btn-outline-primary" id="exportBtn">
+                    <i class="fa-solid fa-download"></i>
+                    Export
+                </button>
+                <button class="btn btn-success" id="createContractBtn">
+                    <i class="fa-solid fa-plus"></i>
+                    Create Contract
+                </button>
+            </div>
+        </div>
+
+        <!-- ===========================================
+        KPI Cards
+        =========================================== -->
+        <div class="row g-4 mb-4">
+
+            <div class="col-lg-3">
+                <div class="card kpi-card">
+                    <div class="card-body">
+                        <div class="kpi-icon bg-primary">
+                            <i class="fa-solid fa-file-signature"></i>
+                        </div>
+                        <h6>Total Contracts</h6>
+                        <h2>1,248</h2>
+                        <small>+12 this month</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3">
+                <div class="card kpi-card">
+                    <div class="card-body">
+                        <div class="kpi-icon bg-success">
+                            <i class="fa-solid fa-circle-check"></i>
+                        </div>
+                        <h6>Active</h6>
+                        <h2>986</h2>
+                        <small>79%</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3">
+                <div class="card kpi-card">
+                    <div class="card-body">
+                        <div class="kpi-icon bg-warning">
+                            <i class="fa-solid fa-clock"></i>
+                        </div>
+                        <h6>Pending Approval</h6>
+                        <h2>58</h2>
+                        <small>Needs Review</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3">
+                <div class="card kpi-card">
+                    <div class="card-body">
+                        <div class="kpi-icon bg-danger">
+                            <i class="fa-solid fa-calendar-xmark"></i>
+                        </div>
+                        <h6>Expired</h6>
+                        <h2>204</h2>
+                        <small>Renew Required</small>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ===========================================
+        Filters
+        =========================================== -->
+        <div class="card mb-4">
+            <div class="card-header">
+                <h5>Search Contracts</h5>
+            </div>
+
+            <div class="card-body">
+                <div class="row g-3">
+
+                    <div class="col-lg-3">
+                        <label>Contract Number</label>
+                        <input type="text" class="form-control" placeholder="CTR-100245">
+                    </div>
+
+                    <div class="col-lg-3">
+                        <label>Customer</label>
+                        <select class="form-select">
+                            <option>All Customers</option>
+                            <option>ABC Energy Ltd</option>
+                            <option>Delta Utilities</option>
+                            <option>Constellation Energy</option>
+                        </select>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <label>Business Unit</label>
+                        <select class="form-select">
+                            <option>All</option>
+                            <option>Gas Trading</option>
+                            <option>Power Trading</option>
+                            <option>Retail</option>
+                        </select>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <label>Contract Type</label>
+                        <select class="form-select">
+                            <option>All</option>
+                            <option>Commodity</option>
+                            <option>Storage</option>
+                            <option>Transportation</option>
+                        </select>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <label>Status</label>
+                        <select class="form-select">
+                            <option>All</option>
+                            <option>Active</option>
+                            <option>Pending</option>
+                            <option>Expired</option>
+                        </select>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <label>Effective Date</label>
+                        <input type="date" class="form-control">
+                    </div>
+
+                    <div class="col-lg-3">
+                        <label>Expiration Date</label>
+                        <input type="date" class="form-control">
+                    </div>
+
+                    <div class="col-lg-3 d-flex align-items-end">
+                        <div class="d-grid gap-2 w-100">
+                            <button class="btn btn-primary">Search</button>
+                            <button class="btn btn-outline-secondary">Reset</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- ===========================================
+        Contract Table Starts
+        =========================================== -->
+        <div class="card">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h5>Contracts</h5>
+                <span class="badge bg-primary">1248 Records</span>
+            </div>
+
+            <div class="card-body p-0">
+                <div class="table-responsive">
+                    <table class="table table-hover align-middle">
+                        <thead>
+                            <tr>
+                                <th>Contract No</th>
+                                <th>Customer</th>
+                                <th>Type</th>
+                                <th>Business Unit</th>
+                                <th>Effective</th>
+                                <th>Expiration</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            <!-- ======================================================
+                                        Contract Records
+                            ====================================================== -->
+                            <tr>
+                                <td>
+                                    <a href="contract-details.html" class="fw-semibold text-decoration-none">
+                                        CTR-100245
+                                    </a>
+                                </td>
+                                <td>ABC Energy Ltd</td>
+                                <td>Commodity</td>
+                                <td>Gas Trading</td>
+                                <td>01-Jan-2026</td>
+                                <td>31-Dec-2026</td>
+                                <td>
+                                    <span class="badge bg-success">Active</span>
+                                </td>
+                                <td>
+                                    <div class="btn-group">
+                                        <button class="btn btn-sm btn-outline-primary" title="View">
+                                            <i class="fa-solid fa-eye"></i>
+                                        </button>
+                                        <button class="btn btn-sm btn-outline-warning" title="Edit">
+                                            <i class="fa-solid fa-pen"></i>
+                                        </button>
+                                        <button class="btn btn-sm btn-outline-info" title="Duplicate">
+                                            <i class="fa-solid fa-copy"></i>
+                                        </button>
+                                        <button class="btn btn-sm btn-outline-danger" title="Delete">
+                                            <i class="fa-solid fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>CTR-100246</td>
+                                <td>Delta Utilities</td>
+                                <td>Storage</td>
+                                <td>Retail</td>
+                                <td>15-Feb-2026</td>
+                                <td>14-Feb-2027</td>
+                                <td>
+                                    <span class="badge bg-warning text-dark">Pending</span>
+                                </td>
+                                <td>
+                                    <div class="btn-group">
+                                        <button class="btn btn-sm btn-outline-primary">
+                                            <i class="fa-solid fa-eye"></i>
+                                        </button>
+                                        <button class="btn btn-sm btn-outline-warning">
+                                            <i class="fa-solid fa-pen"></i>
+                                        </button>
+                                        <button class="btn btn-sm btn-outline-info">
+                                            <i class="fa-solid fa-copy"></i>
+                                        </button>
+                                        <button class="btn btn-sm btn-outline-danger">
+                                            <i class="fa-solid fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>CTR-100247</td>
+                                <td>Omega Gas</td>
+                                <td>Transportation</td>
+                                <td>Gas Trading</td>
+                                <td>01-Mar-2026</td>
+                                <td>28-Feb-2027</td>
+                                <td>
+                                    <span class="badge bg-success">Active</span>
+                                </td>
+                                <td>
+                                    <div class="btn-group">
+                                        <button class="btn btn-sm btn-outline-primary">
+                                            <i class="fa-solid fa-eye"></i>
+                                        </button>
+                                        <button class="btn btn-sm btn-outline-warning">
+                                            <i class="fa-solid fa-pen"></i>
+                                        </button>
+                                        <button class="btn btn-sm btn-outline-info">
+                                            <i class="fa-solid fa-copy"></i>
+                                        </button>
+                                        <button class="btn btn-sm btn-outline-danger">
+                                            <i class="fa-solid fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>CTR-100248</td>
+                                <td>Constellation Energy</td>
+                                <td>Commodity</td>
+                                <td>Power Trading</td>
+                                <td>10-Apr-2026</td>
+                                <td>09-Apr-2027</td>
+                                <td>
+                                    <span class="badge bg-success">Active</span>
+                                </td>
+                                <td>
+                                    <div class="btn-group">
+                                        <button class="btn btn-sm btn-outline-primary">
+                                            <i class="fa-solid fa-eye"></i>
+                                        </button>
+                                        <button class="btn btn-sm btn-outline-warning">
+                                            <i class="fa-solid fa-pen"></i>
+                                        </button>
+                                        <button class="btn btn-sm btn-outline-info">
+                                            <i class="fa-solid fa-copy"></i>
+                                        </button>
+                                        <button class="btn btn-sm btn-outline-danger">
+                                            <i class="fa-solid fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>CTR-100249</td>
+                                <td>National Grid</td>
+                                <td>Transportation</td>
+                                <td>Gas Trading</td>
+                                <td>12-May-2026</td>
+                                <td>11-May-2027</td>
+                                <td>
+                                    <span class="badge bg-danger">Expired</span>
+                                </td>
+                                <td>
+                                    <div class="btn-group">
+                                        <button class="btn btn-sm btn-outline-primary">
+                                            <i class="fa-solid fa-eye"></i>
+                                        </button>
+                                        <button class="btn btn-sm btn-outline-warning">
+                                            <i class="fa-solid fa-pen"></i>
+                                        </button>
+                                        <button class="btn btn-sm btn-outline-info">
+                                            <i class="fa-solid fa-copy"></i>
+                                        </button>
+                                        <button class="btn btn-sm btn-outline-danger">
+                                            <i class="fa-solid fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>CTR-100250</td>
+                                <td>Shell Energy</td>
+                                <td>Storage</td>
+                                <td>Retail</td>
+                                <td>01-Jun-2026</td>
+                                <td>31-May-2027</td>
+                                <td>
+                                    <span class="badge bg-success">Active</span>
+                                </td>
+                                <td>
+                                    <div class="btn-group">
+                                        <button class="btn btn-sm btn-outline-primary">
+                                            <i class="fa-solid fa-eye"></i>
+                                        </button>
+                                        <button class="btn btn-sm btn-outline-warning">
+                                            <i class="fa-solid fa-pen"></i>
+                                        </button>
+                                        <button class="btn btn-sm btn-outline-info">
+                                            <i class="fa-solid fa-copy"></i>
+                                        </button>
+                                        <button class="btn btn-sm btn-outline-danger">
+                                            <i class="fa-solid fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>CTR-100251</td>
+                                <td>British Gas</td>
+                                <td>Commodity</td>
+                                <td>Gas Trading</td>
+                                <td>15-Jun-2026</td>
+                                <td>14-Jun-2027</td>
+                                <td>
+                                    <span class="badge bg-success">Active</span>
+                                </td>
+                                <td>
+                                    <div class="btn-group">
+                                        <button class="btn btn-sm btn-outline-primary">
+                                            <i class="fa-solid fa-eye"></i>
+                                        </button>
+                                        <button class="btn btn-sm btn-outline-warning">
+                                            <i class="fa-solid fa-pen"></i>
+                                        </button>
+                                        <button class="btn btn-sm btn-outline-info">
+                                            <i class="fa-solid fa-copy"></i>
+                                        </button>
+                                        <button class="btn btn-sm btn-outline-danger">
+                                            <i class="fa-solid fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>CTR-100252</td>
+                                <td>EDF Energy</td>
+                                <td>Transportation</td>
+                                <td>Power Trading</td>
+                                <td>01-Jul-2026</td>
+                                <td>30-Jun-2027</td>
+                                <td>
+                                    <span class="badge bg-warning text-dark">Pending</span>
+                                </td>
+                                <td>
+                                    <div class="btn-group">
+                                        <button class="btn btn-sm btn-outline-primary">
+                                            <i class="fa-solid fa-eye"></i>
+                                        </button>
+                                        <button class="btn btn-sm btn-outline-warning">
+                                            <i class="fa-solid fa-pen"></i>
+                                        </button>
+                                        <button class="btn btn-sm btn-outline-info">
+                                            <i class="fa-solid fa-copy"></i>
+                                        </button>
+                                        <button class="btn btn-sm btn-outline-danger">
+                                            <i class="fa-solid fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>CTR-100253</td>
+                                <td>Centrica</td>
+                                <td>Storage</td>
+                                <td>Retail</td>
+                                <td>15-Jul-2026</td>
+                                <td>14-Jul-2027</td>
+                                <td>
+                                    <span class="badge bg-success">Active</span>
+                                </td>
+                                <td>
+                                    <div class="btn-group">
+                                        <button class="btn btn-sm btn-outline-primary">
+                                            <i class="fa-solid fa-eye"></i>
+                                        </button>
+                                        <button class="btn btn-sm btn-outline-warning">
+                                            <i class="fa-solid fa-pen"></i>
+                                        </button>
+                                        <button class="btn btn-sm btn-outline-info">
+                                            <i class="fa-solid fa-copy"></i>
+                                        </button>
+                                        <button class="btn btn-sm btn-outline-danger">
+                                            <i class="fa-solid fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>CTR-100254</td>
+                                <td>Engie Energy</td>
+                                <td>Commodity</td>
+                                <td>Gas Trading</td>
+                                <td>01-Aug-2026</td>
+                                <td>31-Jul-2027</td>
+                                <td>
+                                    <span class="badge bg-success">Active</span>
+                                </td>
+                                <td>
+                                    <div class="btn-group">
+                                        <button class="btn btn-sm btn-outline-primary">
+                                            <i class="fa-solid fa-eye"></i>
+                                        </button>
+                                        <button class="btn btn-sm btn-outline-warning">
+                                            <i class="fa-solid fa-pen"></i>
+                                        </button>
+                                        <button class="btn btn-sm btn-outline-info">
+                                            <i class="fa-solid fa-copy"></i>
+                                        </button>
+                                        <button class="btn btn-sm btn-outline-danger">
+                                            <i class="fa-solid fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===========================================
+        Pagination
+        =========================================== -->
+        <div class="d-flex justify-content-between align-items-center mt-4">
+            <div>
+                Showing <strong>1-10</strong> of <strong>1248</strong> Contracts
+            </div>
+
+            <nav>
+                <ul class="pagination mb-0">
+                    <li class="page-item disabled">
+                        <a class="page-link">Previous</a>
+                    </li>
+                    <li class="page-item active">
+                        <a class="page-link">1</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link">2</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link">3</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link">...</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link">125</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link">Next</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+    </main>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../assets/js/contracts.js"></script>
+
+</body>
+
+</html>
