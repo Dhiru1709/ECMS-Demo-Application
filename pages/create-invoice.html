@@ -1,727 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ECMS | Create Invoice</title>
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    <link rel="stylesheet" href="../assets/css/invoice-details.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ECMS | Create Invoice</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/invoice-details.css">
 </head>
-
 <body>
 
-<div class="wrapper">
-
-    <!-- ======================================================
-                            Sidebar
-    ======================================================= -->
-    <aside class="sidebar">
-        <div class="logo">
-            ECMS
-        </div>
-
-        <ul>
-            <li>
-                <i class="fa-solid fa-chart-line"></i>
-                Dashboard
-            </li>
-            <li>
-                <i class="fa-solid fa-users"></i>
-                Customers
-            </li>
-            <li class="active">
-                <i class="fa-solid fa-file-invoice-dollar"></i>
-                Invoices
-            </li>
-            <li>
-                <i class="fa-solid fa-chart-column"></i>
-                Reports
-            </li>
-            <li>
-                <i class="fa-solid fa-user-shield"></i>
-                Users
-            </li>
-            <li>
-                <i class="fa-solid fa-gear"></i>
-                Settings
-            </li>
-        </ul>
-    </aside>
-
-    <!-- ======================================================
-                        Main Content
-    ======================================================= -->
-    <main class="main-content">
-
-        <!-- ======================================================
-                            Header
-        ======================================================= -->
-        <div class="page-header">
-            <div>
-                <h2>Create Invoice</h2>
-                <p>
-                    Dashboard /
-                    Invoices /
-                    <span>Create Invoice</span>
-                </p>
-            </div>
-
-            <div class="header-actions">
-                <button class="btn btn-outline-secondary">
-                    Cancel
-                </button>
-                <button class="btn btn-success">
-                    Create Invoice
-                </button>
-            </div>
-        </div>
-
-        <!-- ======================================================
-                        Invoice Summary
-        ======================================================= -->
-        <div class="card summary-card mb-4">
-            <div class="card-header">
-                <h5>Invoice Summary</h5>
-            </div>
-
-            <div class="card-body">
-                <div class="row g-4">
-
-                    <div class="col-lg-3">
-                        <label>Invoice Number</label>
-                        <<input class="form-control" placeholder="Auto Generated" readonly>
-                    </div>
-
-                    <div class="col-lg-3">
-                        <label>Status</label>
-                        <input class="form-control" placeholder="Auto Generated" readonly>
-                    </div>
-
-                    <div class="col-lg-3">
-                        <label>Customer</label>
-                        <input class="form-control" placeholder="Auto Generated" readonly>
-                    </div>
-
-                    <div class="col-lg-3">
-                        <label>Business Unit</label>
-                        <input class="form-control" placeholder="Auto Generated" readonly>
-                    </div>
-
-                    <div class="col-lg-3">
-                        <label>Currency</label>
-                        <input class="form-control" placeholder="Auto Generated" readonly>
-                    </div>
-
-                    <div class="col-lg-3">
-                        <label>Invoice Date</label>
-                        <input class="form-control" placeholder="Auto Generated" readonly>
-                    </div>
-
-                    <div class="col-lg-3">
-                        <label>Due Date</label>
-                        <input class="form-control" placeholder="Auto Generated" readonly>
-                    </div>
-
-                    <div class="col-lg-3">
-                        <label>Payment Terms</label>
-                        <input class="form-control" placeholder="Auto Generated" readonly>
-                    </div>
-
-                    <div class="col-lg-3">
-                        <label>Invoice Total</label>
-                        <input class="form-control" placeholder="Auto Generated" readonly>
-                    </div>
-
-                    <div class="col-lg-3">
-                        <label>Outstanding</label>
-                        <input class="form-control" placeholder="Auto Generated" readonly>
-                    </div>
-
-                    <div class="col-lg-3">
-                        <label>Created By</label>
-                        <input class="form-control" placeholder="Auto Generated" readonly>
-                    </div>
-
-                    <div class="col-lg-3">
-                        <label>Approved By</label>
-                        <input class="form-control" placeholder="Auto Generated" readonly>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
-        <!-- ======================================================
-                            Tabs
-        ======================================================= -->
-        <ul class="nav nav-tabs enterprise-tabs mb-4">
-            <li class="nav-item">
-                <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#general">
-                    <i class="fa-solid fa-circle-info"></i>
-                    General
-                </button>
-            </li>
-            <li class="nav-item">
-                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#items">
-                    <i class="fa-solid fa-list"></i>
-                    Line Items
-                </button>
-            </li>
-            <li class="nav-item">
-                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#taxes">
-                    <i class="fa-solid fa-percent"></i>
-                    Taxes
-                </button>
-            </li>
-            <li class="nav-item">
-                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#payments">
-                    <i class="fa-solid fa-credit-card"></i>
-                    Payments
-                </button>
-            </li>
-            <li class="nav-item">
-                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#documents">
-                    <i class="fa-solid fa-folder-open"></i>
-                    Documents
-                </button>
-            </li>
-            <li class="nav-item">
-                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#audit">
-                    <i class="fa-solid fa-clock-rotate-left"></i>
-                    Audit Trail
-                </button>
-            </li>
-        </ul>
-
-        <div class="tab-content">
-
-            <!-- ======================================================
-                                General Tab
-            ======================================================= -->
-            <div class="tab-pane fade show active" id="general">
-                <div class="card">
-                    <div class="card-header">
-                        <h5>Invoice Information</h5>
-                    </div>
-
-                    <div class="card-body">
-                        <div class="row g-4">
-
-                            <div class="col-lg-4">
-                                <label class="form-label">Legal Entity</label>
-                                <input class="form-control" value="UGI Energy Services" readonly>
-                            </div>
-
-                            <div class="col-lg-4">
-                                <label class="form-label">Business Unit</label>
-                                <input class="form-control" value="Gas Trading" readonly>
-                            </div>
-
-                            <div class="col-lg-4">
-                                <label class="form-label">Customer</label>
-                                <input class="form-control" value="ABC Energy Ltd" readonly>
-                            </div>
-
-                            <div class="col-lg-4">
-                                <label class="form-label">Invoice Method</label>
-                                <input class="form-control" value="Bill On Actuals" readonly>
-                            </div>
-
-                            <div class="col-lg-4">
-                                <label class="form-label">Invoice Type</label>
-                                <input class="form-control" value="Commodity" readonly>
-                            </div>
-
-                            <div class="col-lg-4">
-                                <label class="form-label">Currency</label>
-                                <input class="form-control" value="GBP" readonly>
-                            </div>
-
-                            <div class="col-lg-4">
-                                <label class="form-label">Payment Terms</label>
-                                <input class="form-control" value="Net 15" readonly>
-                            </div>
-
-                            <div class="col-lg-4">
-                                <label class="form-label">Invoice Date</label>
-                                <input class="form-control" value="10-Jul-2026" readonly>
-                            </div>
-
-                            <div class="col-lg-4">
-                                <label class="form-label">Due Date</label>
-                                <input class="form-control" value="25-Jul-2026" readonly>
-                            </div>
-
-                            <div class="col-lg-4">
-                                <label class="form-label">Accounting Period</label>
-                                <input class="form-control" value="July 2026" readonly>
-                            </div>
-
-                            <div class="col-lg-4">
-                                <label class="form-label">Purchase Order</label>
-                                <input class="form-control" value="PO-45879" readonly>
-                            </div>
-
-                            <div class="col-lg-4">
-                                <label class="form-label">Contract Number</label>
-                                <input class="form-control" value="CTR-10025" readonly>
-                            </div>
-
-                            <div class="col-lg-6">
-                                <label class="form-label">Price Agreement</label>
-                                <input class="form-control" value="Fixed Commodity Agreement" readonly>
-                            </div>
-
-                            <div class="col-lg-6">
-                                <label class="form-label">Billing Address</label>
-                                <textarea class="form-control" rows="3" readonly>
-ABC Energy Ltd
-London Business Park
-London
-United Kingdom
-                                </textarea>
-                            </div>
-
-                            <div class="col-lg-6">
-                                <label class="form-label">Shipping Address</label>
-                                <textarea class="form-control" rows="3" readonly>
-ABC Energy Ltd
-Warehouse 14
-Manchester
-United Kingdom
-                                </textarea>
-                            </div>
-
-                            <div class="col-lg-12">
-                                <label class="form-label">Invoice Notes</label>
-                                <textarea class="form-control" rows="4" readonly>
-Monthly natural gas supply invoice generated as per contract pricing and transportation agreement.
-                                </textarea>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ======================================================
-                            Line Items Tab
-            ======================================================= -->
-            <div class="tab-pane fade" id="items">
-                <div class="card">
-                    <div class="card-header d-flex justify-content-between align-items-center">
-                        <h5>Invoice Line Items</h5>
-                        <button class="btn btn-primary">
-                            <i class="fa-solid fa-plus"></i>
-                            Add Item
-                        </button>
-                    </div>
-
-                    <div class="card-body p-0">
-                        <div class="table-responsive">
-                            <table class="table table-hover align-middle">
-                                <thead>
-                                    <tr>
-                                        <th>Commodity</th>
-                                        <th>Description</th>
-                                        <th>Quantity</th>
-                                        <th>UOM</th>
-                                        <th>Rate</th>
-                                        <th>Tax %</th>
-                                        <th>Amount</th>
-                                    </tr>
-                                </thead>
-
-                                <tbody>
-                                    <tr>
-                                        <td>Natural Gas</td>
-                                        <td>January Supply</td>
-                                        <td>500</td>
-                                        <td>MMBTU</td>
-                                        <td>£42.50</td>
-                                        <td>10%</td>
-                                        <td>£21,250.00</td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>Transportation</td>
-                                        <td>Pipeline Charges</td>
-                                        <td>1</td>
-                                        <td>EA</td>
-                                        <td>£2,500.00</td>
-                                        <td>0%</td>
-                                        <td>£2,500.00</td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>Storage</td>
-                                        <td>Monthly Storage Fee</td>
-                                        <td>1</td>
-                                        <td>EA</td>
-                                        <td>£750.00</td>
-                                        <td>0%</td>
-                                        <td>£750.00</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ======================================================
-                                Taxes Tab
-            ======================================================= -->
-            <div class="tab-pane fade" id="taxes">
-                <div class="card">
-                    <div class="card-header">
-                        <h5>Tax Summary</h5>
-                    </div>
-
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table table-bordered">
-                                <thead>
-                                    <tr>
-                                        <th>Tax Type</th>
-                                        <th>Rate</th>
-                                        <th>Amount</th>
-                                    </tr>
-                                </thead>
-
-                                <tbody>
-                                    <tr>
-                                        <td>VAT</td>
-                                        <td>10%</td>
-                                        <td>£750.00</td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>Fuel Tax</td>
-                                        <td>0%</td>
-                                        <td>£0.00</td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>Environmental Levy</td>
-                                        <td>0%</td>
-                                        <td>£0.00</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-
-                        <hr>
-
-                        <div class="row">
-                            <div class="col-lg-4 ms-auto">
-                                <table class="table">
-                                    <tr>
-                                        <th>Subtotal</th>
-                                        <td class="text-end">£23,750.00</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Total Tax</th>
-                                        <td class="text-end">£750.00</td>
-                                    </tr>
-                                    <tr class="table-primary">
-                                        <th>Grand Total</th>
-                                        <td class="text-end">
-                                            <strong>£24,500.00</strong>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ======================================================
-                            Payments Tab
-            ======================================================= -->
-            <div class="tab-pane fade" id="payments">
-                <div class="card">
-                    <div class="card-header d-flex justify-content-between align-items-center">
-                        <h5>Payment History</h5>
-                        <button class="btn btn-success">
-                            <i class="fa-solid fa-plus"></i>
-                            Record Payment
-                        </button>
-                    </div>
-
-                    <div class="card-body p-0">
-                        <div class="table-responsive">
-                            <table class="table table-hover align-middle">
-                                <thead>
-                                    <tr>
-                                        <th>Payment Date</th>
-                                        <th>Method</th>
-                                        <th>Reference</th>
-                                        <th>Amount</th>
-                                        <th>Status</th>
-                                    </tr>
-                                </thead>
-
-                                <tbody>
-                                    <tr>
-                                        <td>18-Jul-2026</td>
-                                        <td>Wire Transfer</td>
-                                        <td>TXN985421</td>
-                                        <td>£24,500.00</td>
-                                        <td>
-                                            <span class="badge bg-success">Completed</span>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-
-                        <hr>
-
-                        <div class="row p-4">
-                            <div class="col-lg-4 ms-auto">
-                                <table class="table">
-                                    <tr>
-                                        <th>Total Paid</th>
-                                        <td class="text-end">£24,500.00</td>
-                                    </tr>
-                                    <tr class="table-success">
-                                        <th>Outstanding</th>
-                                        <td class="text-end">£0.00</td>
-                                    </tr>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ======================================================
-                            Documents Tab
-            ======================================================= -->
-            <div class="tab-pane fade" id="documents">
-                <div class="card">
-                    <div class="card-header d-flex justify-content-between align-items-center">
-                        <h5>Invoice Documents</h5>
-                        <button class="btn btn-primary">
-                            <i class="fa-solid fa-upload"></i>
-                            Upload Document
-                        </button>
-                    </div>
-
-                    <div class="card-body p-0">
-                        <table class="table table-hover align-middle">
-                            <thead>
-                                <tr>
-                                    <th>Document</th>
-                                    <th>Uploaded By</th>
-                                    <th>Date</th>
-                                    <th width="170">Actions</th>
-                                </tr>
-                            </thead>
-
-                            <tbody>
-                                <tr>
-                                    <td>Invoice.pdf</td>
-                                    <td>Admin</td>
-                                    <td>10-Jul-2026</td>
-                                    <td>
-                                        <button class="btn btn-sm btn-outline-primary">
-                                            <i class="fa-solid fa-download"></i>
-                                        </button>
-                                        <button class="btn btn-sm btn-outline-danger">
-                                            <i class="fa-solid fa-trash"></i>
-                                        </button>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>Supporting Contract.pdf</td>
-                                    <td>Finance</td>
-                                    <td>10-Jul-2026</td>
-                                    <td>
-                                        <button class="btn btn-sm btn-outline-primary">
-                                            <i class="fa-solid fa-download"></i>
-                                        </button>
-                                        <button class="btn btn-sm btn-outline-danger">
-                                            <i class="fa-solid fa-trash"></i>
-                                        </button>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ======================================================
-                                Audit Trail
-            ======================================================= -->
-            <div class="tab-pane fade" id="audit">
-                <div class="card">
-                    <div class="card-header">
-                        <h5>Audit Trail</h5>
-                    </div>
-
-                    <div class="card-body">
-                        <div class="timeline">
-
-                            <div class="timeline-item">
-                                <div class="timeline-icon bg-primary">
-                                    <i class="fa-solid fa-plus"></i>
-                                </div>
-                                <div class="timeline-content">
-                                    <h6>Invoice Created</h6>
-                                    <p>Invoice created by Admin.</p>
-                                    <small>10-Jul-2026 09:20 AM</small>
-                                </div>
-                            </div>
-
-                            <div class="timeline-item">
-                                <div class="timeline-icon bg-success">
-                                    <i class="fa-solid fa-check"></i>
-                                </div>
-                                <div class="timeline-content">
-                                    <h6>Invoice Approved</h6>
-                                    <p>Approved by Finance Manager.</p>
-                                    <small>11-Jul-2026 11:10 AM</small>
-                                </div>
-                            </div>
-
-                            <div class="timeline-item">
-                                <div class="timeline-icon bg-info">
-                                    <i class="fa-solid fa-money-bill-wave"></i>
-                                </div>
-                                <div class="timeline-content">
-                                    <h6>Payment Received</h6>
-                                    <p>Wire transfer completed successfully.</p>
-                                    <small>18-Jul-2026 04:15 PM</small>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-        <!-- ======================================================
-                            Quick Actions
-        ======================================================= -->
-        <div class="row mt-4">
-
-            <div class="col-lg-4">
-                <div class="card">
-                    <div class="card-header">
-                        <h5>Quick Actions</h5>
-                    </div>
-
-                    <div class="card-body d-grid gap-2">
-                        <button class="btn btn-primary">
-                            <i class="fa-solid fa-pen"></i>
-                            Edit Invoice
-                        </button>
-                        <button class="btn btn-outline-primary">
-                            <i class="fa-solid fa-copy"></i>
-                            Duplicate Invoice
-                        </button>
-                        <button class="btn btn-outline-secondary">
-                            <i class="fa-solid fa-print"></i>
-                            Print Invoice
-                        </button>
-                        <button class="btn btn-outline-success">
-                            <i class="fa-solid fa-envelope"></i>
-                            Email Invoice
-                        </button>
-                        <button class="btn btn-outline-danger">
-                            <i class="fa-solid fa-ban"></i>
-                            Cancel Invoice
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-8">
-                <div class="card">
-                    <div class="card-header">
-                        <h5>Related Records</h5>
-                    </div>
-
-                    <div class="card-body">
-                        <div class="row g-3">
-
-                            <div class="col-md-4">
-                                <div class="border rounded p-3">
-                                    <h6>Customer</h6>
-                                    <p class="mb-0">ABC Energy Ltd</p>
-                                </div>
-                            </div>
-
-                            <div class="col-md-4">
-                                <div class="border rounded p-3">
-                                    <h6>Contract</h6>
-                                    <p class="mb-0">CTR-10025</p>
-                                </div>
-                            </div>
-
-                            <div class="col-md-4">
-                                <div class="border rounded p-3">
-                                    <h6>Price Agreement</h6>
-                                    <p class="mb-0">Fixed Commodity Agreement</p>
-                                </div>
-                            </div>
-
-                            <div class="col-md-4">
-                                <div class="border rounded p-3">
-                                    <h6>Payment</h6>
-                                    <p class="mb-0">TXN985421</p>
-                                </div>
-                            </div>
-
-                            <div class="col-md-4">
-                                <div class="border rounded p-3">
-                                    <h6>Credit Memo</h6>
-                                    <p class="mb-0">None</p>
-                                </div>
-                            </div>
-
-                            <div class="col-md-4">
-                                <div class="border rounded p-3">
-                                    <h6>Invoice Status</h6>
-                                    <p class="mb-0">Paid</p>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-        <!-- ======================================================
-                            Footer
-        ======================================================= -->
-        <div class="page-footer">
-            <button class="btn btn-outline-secondary">
-                Cancel
-            </button>
-            <button class="btn btn-success">
-                Save Changes
-            </button>
-        </div>
-
-    </main>
-
+<!-- PATCHES TO APPLY TO YOUR CURRENT FILE -->
+
+<!-- 1. General Tab -->
+<!-- Replace Customer input with -->
+<select class="form-select">
+  <option selected>Select Customer</option>
+  <option>ABC Energy Ltd</option>
+  <option>Delta Utilities</option>
+  <option>Omega Gas</option>
+</select>
+
+<!-- Replace Currency input with -->
+<select class="form-select">
+  <option>GBP</option>
+  <option>USD</option>
+  <option>EUR</option>
+</select>
+
+<!-- Replace Payment Terms input with -->
+<select class="form-select">
+  <option>Net 15</option>
+  <option>Net 30</option>
+  <option>Net 45</option>
+</select>
+
+<!-- Replace Accounting Period -->
+<select class="form-select">
+  <option>July 2026</option>
+  <option>August 2026</option>
+</select>
+
+<!-- Purchase Order -->
+<input type="text" class="form-control" placeholder="Enter Purchase Order">
+
+<!-- Contract Number -->
+<input type="text" class="form-control" placeholder="Enter Contract Number">
+
+<!-- Price Agreement -->
+<select class="form-select">
+  <option>Select Price Agreement</option>
+  <option>Fixed Commodity Agreement</option>
+  <option>Index Based Agreement</option>
+</select>
+
+<!-- Invoice Date -->
+<input type="date" class="form-control">
+
+<!-- Due Date -->
+<input type="date" class="form-control">
+
+<!-- 2. Line Items -->
+<!-- Table Header -->
+<table class="table table-hover">
+<thead>
+<tr>
+<th>Commodity</th>
+<th>Description</th>
+<th>Quantity</th>
+<th>UOM</th>
+<th>Rate</th>
+<th>Tax</th>
+<th>Amount</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<select class="form-select">
+<option>Natural Gas</option>
+<option>Transportation</option>
+<option>Storage</option>
+</select>
+</td>
+<td><input class="form-control" placeholder="Description"></td>
+<td><input type="number" class="form-control"></td>
+<td>
+<select class="form-select">
+<option>MMBTU</option>
+<option>EA</option>
+</select>
+</td>
+<td><input type="number" class="form-control"></td>
+<td>
+<select class="form-select">
+<option>0%</option>
+<option>5%</option>
+<option>10%</option>
+<option>18%</option>
+</select>
+</td>
+<td><input class="form-control" value="£0.00" readonly></td>
+<td><button class="btn btn-outline-danger btn-sm">Delete</button></td>
+</tr>
+</tbody>
+</table>
+
+<!-- 3. Payments -->
+<div class="alert alert-info">
+No payments available.<br>
+Payments can be recorded after invoice creation.
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="../assets/js/invoice-details.js"></script>
+<!-- 4. Documents -->
+<div class="alert alert-warning">
+Documents can be uploaded after invoice creation.
+</div>
+
+<!-- 5. Audit -->
+<div class="alert alert-secondary">
+Audit history will be generated after invoice creation.
+</div>
+
+<!-- 6. Quick Actions -->
+<div class="d-grid gap-2">
+<button class="btn btn-outline-primary">Save Draft</button>
+<button class="btn btn-success">Create Invoice</button>
+</div>
+
+<!-- 7. Related Records -->
+<div class="alert alert-secondary">
+Related records will appear after invoice creation.
+</div>
 
 </body>
-
 </html>
