@@ -1,0 +1,392 @@
+/* ==========================================================
+   ECMS - Create Contract
+   create-contract.css
+========================================================== */
+
+/* ==========================
+   Global
+========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#f4f6f9;
+    font-family:"Segoe UI",Tahoma,Geneva,Verdana,sans-serif;
+    color:#343a40;
+}
+
+.wrapper{
+    display:flex;
+    min-height:100vh;
+}
+
+/* ==========================
+   Sidebar
+========================== */
+
+.sidebar{
+    width:250px;
+    background:#1f2937;
+    color:#fff;
+    position:fixed;
+    top:0;
+    left:0;
+    bottom:0;
+    overflow-y:auto;
+}
+
+.logo{
+    padding:24px;
+    text-align:center;
+    font-size:24px;
+    font-weight:700;
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.sidebar ul{
+    list-style:none;
+    padding:20px 0;
+}
+
+.sidebar li{
+    padding:15px 25px;
+    cursor:pointer;
+    transition:.25s;
+}
+
+.sidebar li:hover{
+    background:#374151;
+}
+
+.sidebar li i{
+    width:22px;
+}
+
+.sidebar .active{
+    background:#0d6efd;
+}
+
+/* ==========================
+   Main
+========================== */
+
+.main-content{
+    margin-left:250px;
+    width:calc(100% - 250px);
+    padding:30px;
+}
+
+/* ==========================
+   Header
+========================== */
+
+.page-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:25px;
+}
+
+.page-header h2{
+    font-weight:700;
+    margin-bottom:5px;
+}
+
+.page-header p{
+    color:#6c757d;
+    margin:0;
+}
+
+.header-actions{
+    display:flex;
+    gap:10px;
+}
+
+/* ==========================
+   Cards
+========================== */
+
+.card{
+    border:none;
+    border-radius:12px;
+    box-shadow:0 4px 15px rgba(0,0,0,.06);
+}
+
+.card-header{
+    background:#fff;
+    border-bottom:1px solid #ececec;
+    padding:18px 22px;
+}
+
+.card-header h5{
+    margin:0;
+    font-weight:600;
+}
+
+.card-body{
+    padding:22px;
+}
+
+/* ==========================
+   Summary
+========================== */
+
+.summary-card label{
+    font-size:13px;
+    font-weight:600;
+    margin-bottom:6px;
+    display:block;
+}
+
+.summary-card input{
+    background:#f8f9fa;
+}
+
+/* ==========================
+   Required
+========================== */
+
+.required::after{
+    content:" *";
+    color:#dc3545;
+}
+
+/* ==========================
+   Tabs
+========================== */
+
+.enterprise-tabs{
+    border-bottom:2px solid #dee2e6;
+}
+
+.enterprise-tabs .nav-link{
+    border:none;
+    color:#495057;
+    padding:14px 18px;
+    font-weight:600;
+    transition:.2s;
+}
+
+.enterprise-tabs .nav-link.active{
+    color:#0d6efd;
+    border-bottom:3px solid #0d6efd;
+    background:#fff;
+}
+
+.enterprise-tabs .nav-link:hover{
+    color:#0d6efd;
+}
+
+/* ==========================
+   Forms
+========================== */
+
+.form-control,
+.form-select{
+    border-radius:8px;
+    min-height:44px;
+}
+
+.form-control:focus,
+.form-select:focus{
+    border-color:#0d6efd;
+    box-shadow:0 0 0 .15rem rgba(13,110,253,.15);
+}
+
+textarea.form-control{
+    min-height:110px;
+    resize:vertical;
+}
+
+.is-invalid{
+    border-color:#dc3545 !important;
+}
+
+/* ==========================
+   Table
+========================== */
+
+.table{
+    margin-bottom:0;
+}
+
+.table th{
+    white-space:nowrap;
+    background:#f8f9fa;
+    font-size:14px;
+    font-weight:600;
+}
+
+.table td{
+    vertical-align:middle;
+}
+
+.table-hover tbody tr:hover{
+    background:#f8fbff;
+}
+
+/* ==========================
+   Buttons
+========================== */
+
+.btn{
+    border-radius:8px;
+    font-weight:500;
+}
+
+.btn-group .btn{
+    padding:5px 10px;
+}
+
+/* ==========================
+   Badge
+========================== */
+
+.badge{
+    padding:7px 12px;
+    border-radius:20px;
+    font-size:12px;
+}
+
+/* ==========================
+   Summary Cards
+========================== */
+
+.border.rounded{
+    transition:.25s;
+    background:#fff;
+}
+
+.border.rounded:hover{
+    transform:translateY(-3px);
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+
+.border.rounded h6{
+    font-weight:600;
+    color:#495057;
+}
+
+.border.rounded p{
+    margin:0;
+    font-weight:500;
+}
+
+/* ==========================
+   Quick Actions
+========================== */
+
+.d-grid .btn{
+    margin-bottom:8px;
+}
+
+/* ==========================
+   Footer
+========================== */
+
+.page-footer{
+    display:flex;
+    justify-content:flex-end;
+    gap:12px;
+    margin-top:30px;
+}
+
+/* ==========================
+   Loader
+========================== */
+
+#pageLoader{
+    background:rgba(255,255,255,.9);
+}
+
+/* ==========================
+   Scrollbar
+========================== */
+
+::-webkit-scrollbar{
+    width:8px;
+    height:8px;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#b8b8b8;
+    border-radius:20px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background:#888;
+}
+
+/* ==========================
+   Responsive
+========================== */
+
+@media(max-width:992px){
+
+.sidebar{
+    width:80px;
+}
+
+.logo{
+    font-size:18px;
+    padding:18px;
+}
+
+.sidebar li{
+    text-align:center;
+    font-size:0;
+    padding:18px 0;
+}
+
+.sidebar li i{
+    font-size:18px;
+}
+
+.main-content{
+    margin-left:80px;
+    width:calc(100% - 80px);
+}
+
+.page-header{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:15px;
+}
+
+.header-actions{
+    width:100%;
+}
+
+.header-actions .btn{
+    flex:1;
+}
+
+}
+
+@media(max-width:768px){
+
+.page-header h2{
+    font-size:24px;
+}
+
+.table-responsive{
+    overflow-x:auto;
+}
+
+.page-footer{
+    flex-direction:column;
+}
+
+.page-footer .btn{
+    width:100%;
+}
+
+.row>[class*="col-"]{
+    margin-bottom:15px;
+}
+
+}
