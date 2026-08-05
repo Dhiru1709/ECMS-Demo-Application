@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECMS | Create Contract</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/create-contract.css">
+</head>
+
+<body>
+
+<div class="wrapper">
+
+    <!-- =====================================================
+    Sidebar
+    ===================================================== -->
+    <aside class="sidebar">
+        <div class="logo">
+            ECMS
+        </div>
+
+        <ul>
+            <li>
+                <i class="fa-solid fa-chart-line"></i>
+                Dashboard
+            </li>
+            <li>
+                <i class="fa-solid fa-users"></i>
+                Customers
+            </li>
+            <li class="active">
+                <i class="fa-solid fa-file-signature"></i>
+                Contracts
+            </li>
+            <li>
+                <i class="fa-solid fa-file-invoice-dollar"></i>
+                Invoices
+            </li>
+            <li>
+                <i class="fa-solid fa-chart-column"></i>
+                Reports
+            </li>
+            <li>
+                <i class="fa-solid fa-gear"></i>
+                Settings
+            </li>
+        </ul>
+    </aside>
+
+    <!-- =====================================================
+    Main Content
+    ===================================================== -->
+    <main class="main-content">
+
+        <!-- =====================================================
+        Header
+        ===================================================== -->
+        <div class="page-header">
+            <div>
+                <h2>Create Contract</h2>
+                <p>
+                    Dashboard /
+                    Contracts /
+                    <span>Create Contract</span>
+                </p>
+            </div>
+
+            <div class="header-actions">
+                <button class="btn btn-outline-primary" id="saveDraftBtn">
+                    <i class="fa-solid fa-floppy-disk"></i>
+                    Save Draft
+                </button>
+                <button class="btn btn-outline-secondary" id="cancelBtn">
+                    Cancel
+                </button>
+                <button class="btn btn-success" id="createContractBtn">
+                    <i class="fa-solid fa-circle-check"></i>
+                    Create Contract
+                </button>
+            </div>
+        </div>
+
+        <!-- =====================================================
+        Contract Summary
+        ===================================================== -->
+        <div class="card summary-card mb-4">
+            <div class="card-header">
+                <h5>Contract Summary</h5>
+            </div>
+
+            <div class="card-body">
+                <div class="row g-4">
+
+                    <div class="col-lg-3">
+                        <label class="required">Contract Number</label>
+                        <input class="form-control" id="contractNumber" placeholder="Auto Generated" readonly>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <label>Status</label>
+                        <input class="form-control" value="Draft" readonly>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <label class="required">Customer</label>
+                        <select class="form-select" id="customer">
+                            <option selected>Select Customer</option>
+                            <option>ABC Energy Ltd</option>
+                            <option>Delta Utilities</option>
+                            <option>Omega Gas</option>
+                            <option>Constellation Energy</option>
+                            <option>National Grid</option>
+                        </select>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <label class="required">Legal Entity</label>
+                        <select class="form-select" id="legalEntity">
+                            <option selected>Select Legal Entity</option>
+                            <option>UGI Energy Services</option>
+                            <option>UGI Utilities</option>
+                            <option>UGI Midstream</option>
+                        </select>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <label class="required">Business Unit</label>
+                        <select class="form-select" id="businessUnit">
+                            <option selected>Select Business Unit</option>
+                            <option>Gas Trading</option>
+                            <option>Power Trading</option>
+                            <option>Retail</option>
+                        </select>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <label class="required">Contract Type</label>
+                        <select class="form-select" id="contractType">
+                            <option selected>Select Contract Type</option>
+                            <option>Commodity</option>
+                            <option>Transportation</option>
+                            <option>Storage</option>
+                        </select>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <label>Currency</label>
+                        <select class="form-select" id="currency">
+                            <option>GBP</option>
+                            <option>USD</option>
+                            <option>EUR</option>
+                        </select>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <label>Payment Terms</label>
+                        <select class="form-select" id="paymentTerms">
+                            <option>Net 15</option>
+                            <option>Net 30</option>
+                            <option>Net 45</option>
+                        </select>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <label class="required">Effective Date</label>
+                        <input type="date" class="form-control" id="effectiveDate">
+                    </div>
+
+                    <div class="col-lg-3">
+                        <label class="required">Expiration Date</label>
+                        <input type="date" class="form-control" id="expirationDate">
+                    </div>
+
+                    <div class="col-lg-3">
+                        <label>Created By</label>
+                        <input class="form-control" value="Admin" readonly>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <label>Approval Status</label>
+                        <input class="form-control" value="Pending" readonly>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- =====================================================
+        Enterprise Tabs
+        ===================================================== -->
+        <ul class="nav nav-tabs enterprise-tabs mb-4">
+            <li class="nav-item">
+                <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#general">
+                    <i class="fa-solid fa-circle-info"></i>
+                    General
+                </button>
+            </li>
+            <li class="nav-item">
+                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#commercial">
+                    <i class="fa-solid fa-briefcase"></i>
+                    Commercial
+                </button>
+            </li>
+            <li class="nav-item">
+                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#pricing">
+                    <i class="fa-solid fa-pound-sign"></i>
+                    Pricing
+                </button>
+            </li>
+            <li class="nav-item">
+                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#delivery">
+                    <i class="fa-solid fa-location-dot"></i>
+                    Delivery Points
+                </button>
+            </li>
+            <li class="nav-item">
+                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#contacts">
+                    <i class="fa-solid fa-address-book"></i>
+                    Contacts
+                </button>
+            </li>
+            <li class="nav-item">
+                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#documents">
+                    <i class="fa-solid fa-folder-open"></i>
+                    Documents
+                </button>
+            </li>
+            <li class="nav-item">
+                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#approval">
+                    <i class="fa-solid fa-user-check"></i>
+                    Approval
+                </button>
+            </li>
+        </ul>
+
+        <div class="tab-content">
+
+            <!-- =====================================================
+                                General Tab
+            ===================================================== -->
+            <div class="tab-pane fade show active" id="general">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>General Information</h5>
+                    </div>
+
+                    <div class="card-body">
+                        <div class="row g-4">
+
+                            <div class="col-lg-4">
+                                <label class="required">Contract Name</label>
+                                <input type="text" class="form-control" id="contractName" placeholder="Enter Contract Name">
+                            </div>
+
+                            <div class="col-lg-4">
+                                <label>Contract Category</label>
+                                <select class="form-select" id="contractCategory">
+                                    <option selected>Select Category</option>
+                                    <option>Wholesale</option>
+                                    <option>Retail</option>
+                                    <option>Industrial</option>
+                                    <option>Commercial</option>
+                                </select>
+                            </div>
+
+                            <div class="col-lg-4">
+                                <label>Invoice Method</label>
+                                <select class="form-select" id="invoiceMethod">
+                                    <option>Bill On Actuals</option>
+                                    <option>Bill On Nominations</option>
+                                </select>
+                            </div>
+
+                            <div class="col-lg-4">
+                                <label>Settlement Method</label>
+                                <select class="form-select" id="settlementMethod">
+                                    <option>Monthly</option>
+                                    <option>Weekly</option>
+                                    <option>Daily</option>
+                                </select>
+                            </div>
+
+                            <div class="col-lg-4">
+                                <label>Accounting Period</label>
+                                <select class="form-select" id="accountingPeriod">
+                                    <option>Calendar Month</option>
+                                    <option>Fiscal Month</option>
+                                </select>
+                            </div>
+
+                            <div class="col-lg-4">
+                                <label>Purchase Order</label>
+                                <input type="text" class="form-control" id="purchaseOrder" placeholder="PO Number">
+                            </div>
+
+                            <div class="col-lg-6">
+                                <label>Billing Address</label>
+                                <textarea class="form-control" rows="4" id="billingAddress" placeholder="Billing Address"></textarea>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <label>Delivery Address</label>
+                                <textarea class="form-control" rows="4" id="deliveryAddress" placeholder="Delivery Address"></textarea>
+                            </div>
+
+                            <div class="col-lg-12">
+                                <label>Contract Notes</label>
+                                <textarea class="form-control" rows="4" id="contractNotes" placeholder="Enter Notes"></textarea>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- =====================================================
+                            Commercial Tab
+            ===================================================== -->
+            <div class="tab-pane fade" id="commercial">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Commercial Terms</h5>
+                    </div>
+
+                    <div class="card-body">
+                        <div class="row g-4">
+
+                            <div class="col-lg-3">
+                                <label>Commodity</label>
+                                <select class="form-select" id="commodity">
+                                    <option>Natural Gas</option>
+                                    <option>Power</option>
+                                    <option>LNG</option>
+                                </select>
+                            </div>
+
+                            <div class="col-lg-3">
+                                <label>Contract Quantity</label>
+                                <input type="number" class="form-control" id="contractQuantity" placeholder="0">
+                            </div>
+
+                            <div class="col-lg-3">
+                                <label>Unit Of Measure</label>
+                                <select class="form-select" id="uom">
+                                    <option>MMBTU</option>
+                                    <option>DTH</option>
+                                    <option>MWH</option>
+                                </select>
+                            </div>
+
+                            <div class="col-lg-3">
+                                <label>Tolerance %</label>
+                                <input type="number" class="form-control" id="tolerance" placeholder="5">
+                            </div>
+
+                            <div class="col-lg-3">
+                                <label>Delivery Frequency</label>
+                                <select class="form-select" id="deliveryFrequency">
+                                    <option>Daily</option>
+                                    <option>Weekly</option>
+                                    <option>Monthly</option>
+                                </select>
+                            </div>
+
+                            <div class="col-lg-3">
+                                <label>Contract Start</label>
+                                <input type="date" class="form-control" id="contractStart">
+                            </div>
+
+                            <div class="col-lg-3">
+                                <label>Contract End</label>
+                                <input type="date" class="form-control" id="contractEnd">
+                            </div>
+
+                            <div class="col-lg-3">
+                                <label>Renewal Type</label>
+                                <select class="form-select" id="renewalType">
+                                    <option>Manual</option>
+                                    <option>Auto Renew</option>
+                                </select>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <label>Termination Clause</label>
+                                <textarea class="form-control" rows="4" id="terminationClause" placeholder="Enter termination conditions"></textarea>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <label>Special Commercial Terms</label>
+                                <textarea class="form-control" rows="4" id="commercialTerms" placeholder="Additional commercial terms"></textarea>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- =====================================================
+                                Pricing Tab
+            ===================================================== -->
+            <div class="tab-pane fade" id="pricing">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h5>Pricing Configuration</h5>
+                        <span class="badge bg-primary">Commercial Pricing</span>
+                    </div>
+
+                    <div class="card-body">
+                        <div class="row g-4">
+
+                            <div class="col-lg-3">
+                                <label>Pricing Method</label>
+                                <select class="form-select" id="pricingMethod">
+                                    <option>Fixed</option>
+                                    <option>Index Based</option>
+                                    <option>Hybrid</option>
+                                </select>
+                            </div>
+
+                            <div class="col-lg-3">
+                                <label>Fixed Price</label>
+                                <input type="number" class="form-control" id="fixedPrice" placeholder="0.00">
+                            </div>
+
+                            <div class="col-lg-3">
+                                <label>Market Index</label>
+                                <select class="form-select" id="marketIndex">
+                                    <option>NYMEX</option>
+                                    <option>ICE</option>
+                                    <option>TTF</option>
+                                    <option>Henry Hub</option>
+                                </select>
+                            </div>
+
+                            <div class="col-lg-3">
+                                <label>Currency</label>
+                                <select class="form-select" id="priceCurrency">
+                                    <option>GBP</option>
+                                    <option>USD</option>
+                                    <option>EUR</option>
+                                </select>
+                            </div>
+
+                            <div class="col-lg-3">
+                                <label>Transportation Rate</label>
+                                <input type="number" class="form-control" id="transportRate" placeholder="0.00">
+                            </div>
+
+                            <div class="col-lg-3">
+                                <label>Storage Rate</label>
+                                <input type="number" class="form-control" id="storageRate" placeholder="0.00">
+                            </div>
+
+                            <div class="col-lg-3">
+                                <label>Fuel Loss %</label>
+                                <input type="number" class="form-control" id="fuelLoss" placeholder="0">
+                            </div>
+
+                            <div class="col-lg-3">
+                                <label>Recurring Fee</label>
+                                <input type="number" class="form-control" id="recurringFee" placeholder="0.00">
+                            </div>
+
+                            <div class="col-lg-3">
+                                <label>Tax Code</label>
+                                <select class="form-select" id="taxCode">
+                                    <option>VAT 0%</option>
+                                    <option>VAT 5%</option>
+                                    <option>VAT 10%</option>
+                                    <option>VAT 18%</option>
+                                </select>
+                            </div>
+
+                            <div class="col-lg-9">
+                                <label>Pricing Notes</label>
+                                <textarea class="form-control" rows="3" id="pricingNotes" placeholder="Pricing remarks"></textarea>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- =====================================================
+                            Delivery Points
+            ===================================================== -->
+            <div class="tab-pane fade" id="delivery">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h5>Delivery Points</h5>
+                        <button class="btn btn-primary" id="addDeliveryPointBtn">
+                            <i class="fa-solid fa-plus"></i>
+                            Add Delivery Point
+                        </button>
+                    </div>
+
+                    <div class="card-body p-0">
+                        <div class="table-responsive">
+                            <table class="table table-hover align-middle">
+                                <thead>
+                                    <tr>
+                                        <th>Pipeline</th>
+                                        <th>Receipt Point</th>
+                                        <th>Delivery Point</th>
+                                        <th>Zone</th>
+                                        <th>Capacity</th>
+                                        <th>UOM</th>
+                                        <th>Priority</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody id="deliveryPointsBody">
+                                    <tr>
+                                        <td>
+                                            <select class="form-select">
+                                                <option>National Grid</option>
+                                                <option>Transco</option>
+                                                <option>Alliance</option>
+                                            </select>
+                                        </td>
+
+                                        <td>
+                                            <input type="text" class="form-control" placeholder="Receipt Point">
+                                        </td>
+
+                                        <td>
+                                            <input type="text" class="form-control" placeholder="Delivery Point">
+                                        </td>
+
+                                        <td>
+                                            <select class="form-select">
+                                                <option>North</option>
+                                                <option>South</option>
+                                                <option>East</option>
+                                                <option>West</option>
+                                            </select>
+                                        </td>
+
+                                        <td>
+                                            <input type="number" class="form-control" placeholder="Capacity">
+                                        </td>
+
+                                        <td>
+                                            <select class="form-select">
+                                                <option>MMBTU</option>
+                                                <option>DTH</option>
+                                            </select>
+                                        </td>
+
+                                        <td>
+                                            <select class="form-select">
+                                                <option>Primary</option>
+                                                <option>Secondary</option>
+                                            </select>
+                                        </td>
+
+                                        <td>
+                                            <button class="btn btn-sm btn-outline-danger">
+                                                <i class="fa-solid fa-trash"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- =====================================================
+                            Contacts
+            ===================================================== -->
+            <div class="tab-pane fade" id="contacts">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Contact Information</h5>
+                    </div>
+
+                    <div class="card-body">
+                        <div class="row g-4">
+
+                            <div class="col-lg-4">
+                                <label>Primary Contact</label>
+                                <input type="text" class="form-control" id="primaryContact" placeholder="Full Name">
+                            </div>
+
+                            <div class="col-lg-4">
+                                <label>Billing Contact</label>
+                                <input type="text" class="form-control" id="billingContact" placeholder="Full Name">
+                            </div>
+
+                            <div class="col-lg-4">
+                                <label>Operations Contact</label>
+                                <input type="text" class="form-control" id="operationsContact" placeholder="Full Name">
+                            </div>
+
+                            <div class="col-lg-4">
+                                <label>Phone Number</label>
+                                <input type="tel" class="form-control" id="phoneNumber" placeholder="+44 XXXXX XXXXX">
+                            </div>
+
+                            <div class="col-lg-4">
+                                <label>Email Address</label>
+                                <input type="email" class="form-control" id="emailAddress" placeholder="example@company.com">
+                            </div>
+
+                            <div class="col-lg-4">
+                                <label>Emergency Contact</label>
+                                <input type="text" class="form-control" id="emergencyContact" placeholder="Emergency Contact">
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- =====================================================
+                                Documents Tab
+            ===================================================== -->
+            <div class="tab-pane fade" id="documents">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h5>Documents</h5>
+                        <button class="btn btn-primary" id="uploadDocumentBtn">
+                            <i class="fa-solid fa-upload"></i>
+                            Upload Document
+                        </button>
+                    </div>
+
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover align-middle">
+                                <thead>
+                                    <tr>
+                                        <th>Document Name</th>
+                                        <th>Category</th>
+                                        <th>Uploaded By</th>
+                                        <th>Date</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody id="documentsTableBody">
+                                    <tr>
+                                        <td>Master Agreement.pdf</td>
+                                        <td>Contract</td>
+                                        <td>Admin</td>
+                                        <td>01-Jul-2026</td>
+                                        <td>
+                                            <span class="badge bg-success">Verified</span>
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-sm btn-outline-primary">
+                                                <i class="fa-solid fa-download"></i>
+                                            </button>
+                                            <button class="btn btn-sm btn-outline-danger">
+                                                <i class="fa-solid fa-trash"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- =====================================================
+                                Approval Tab
+            ===================================================== -->
+            <div class="tab-pane fade" id="approval">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Approval Workflow</h5>
+                    </div>
+
+                    <div class="card-body">
+                        <div class="row g-4">
+
+                            <div class="col-lg-3">
+                                <label>Created By</label>
+                                <input class="form-control" value="Admin" readonly>
+                            </div>
+
+                            <div class="col-lg-3">
+                                <label>Manager Approval</label>
+                                <select class="form-select" id="managerApproval">
+                                    <option>Pending</option>
+                                    <option>Approved</option>
+                                    <option>Rejected</option>
+                                </select>
+                            </div>
+
+                            <div class="col-lg-3">
+                                <label>Finance Approval</label>
+                                <select class="form-select" id="financeApproval">
+                                    <option>Pending</option>
+                                    <option>Approved</option>
+                                    <option>Rejected</option>
+                                </select>
+                            </div>
+
+                            <div class="col-lg-3">
+                                <label>Legal Approval</label>
+                                <select class="form-select" id="legalApproval">
+                                    <option>Pending</option>
+                                    <option>Approved</option>
+                                    <option>Rejected</option>
+                                </select>
+                            </div>
+
+                            <div class="col-lg-12">
+                                <label>Approval Comments</label>
+                                <textarea class="form-control" rows="4" id="approvalComments" placeholder="Approval comments..."></textarea>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- =====================================================
+                        Quick Actions
+        ===================================================== -->
+        <div class="row mt-4">
+
+            <div class="col-lg-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Quick Actions</h5>
+                    </div>
+
+                    <div class="card-body d-grid gap-2">
+                        <button class="btn btn-outline-primary" id="saveDraftBtn2">
+                            <i class="fa-solid fa-floppy-disk"></i>
+                            Save Draft
+                        </button>
+                        <button class="btn btn-success" id="createContractBtn2">
+                            <i class="fa-solid fa-circle-check"></i>
+                            Create Contract
+                        </button>
+                        <button class="btn btn-outline-secondary" id="resetContractBtn">
+                            <i class="fa-solid fa-rotate-right"></i>
+                            Reset Form
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-8">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Contract Summary</h5>
+                    </div>
+
+                    <div class="card-body">
+                        <div class="row g-3">
+
+                            <div class="col-md-4">
+                                <div class="border rounded p-3">
+                                    <h6>Customer</h6>
+                                    <p class="mb-0">Selected Customer</p>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="border rounded p-3">
+                                    <h6>Business Unit</h6>
+                                    <p class="mb-0">Gas Trading</p>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="border rounded p-3">
+                                    <h6>Contract Type</h6>
+                                    <p class="mb-0">Commodity</p>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="border rounded p-3">
+                                    <h6>Pricing Method</h6>
+                                    <p class="mb-0">Fixed</p>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="border rounded p-3">
+                                    <h6>Settlement</h6>
+                                    <p class="mb-0">Monthly</p>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="border rounded p-3">
+                                    <h6>Approval Status</h6>
+                                    <p class="mb-0">Pending</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- =====================================================
+                        Footer
+        ===================================================== -->
+        <div class="page-footer">
+            <button class="btn btn-outline-secondary" id="cancelFooterBtn">
+                Cancel
+            </button>
+            <button class="btn btn-outline-primary" id="saveDraftFooterBtn">
+                Save Draft
+            </button>
+            <button class="btn btn-success" id="createFooterBtn">
+                Create Contract
+            </button>
+        </div>
+
+    </main>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../assets/js/create-contract.js"></script>
+
+</body>
+
+</html>
