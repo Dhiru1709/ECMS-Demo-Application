@@ -1,0 +1,72 @@
+@import url("invoice-details.css");
+
+/* ==================================
+        Create Invoice
+================================== */
+
+.page-header h2{
+
+    color:#198754;
+
+}
+
+.summary-card{
+
+    border-left:5px solid #198754;
+
+}
+
+.btn-success{
+
+    background:#198754;
+    border:none;
+
+}
+
+.btn-success:hover{
+
+    background:#157347;
+
+}
+
+/* Required field */
+
+.required::after{
+
+    content:" *";
+
+    color:red;
+
+}
+
+/* Editable inputs */
+
+input:not([readonly]),
+
+select,
+
+textarea{
+
+    background:#fff;
+
+}
+
+/* Auto generated fields */
+
+input[readonly]{
+
+    background:#f8f9fa;
+
+    cursor:not-allowed;
+
+}
+
+/* Draft Badge */
+
+.badge-draft{
+
+    background:#ffc107;
+
+    color:#000;
+
+}
