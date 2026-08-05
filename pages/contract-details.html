@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECMS | Contract Details</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/contract-details.css">
+</head>
+
+<body>
+
+<div class="wrapper">
+
+    <!-- =====================================================
+    Sidebar
+    ===================================================== -->
+    <aside class="sidebar">
+        <div class="logo">
+            ECMS
+        </div>
+
+        <ul>
+            <li>
+                <i class="fa-solid fa-chart-line"></i>
+                Dashboard
+            </li>
+            <li>
+                <i class="fa-solid fa-users"></i>
+                Customers
+            </li>
+            <li class="active">
+                <i class="fa-solid fa-file-signature"></i>
+                Contracts
+            </li>
+            <li>
+                <i class="fa-solid fa-file-invoice-dollar"></i>
+                Invoices
+            </li>
+            <li>
+                <i class="fa-solid fa-chart-column"></i>
+                Reports
+            </li>
+            <li>
+                <i class="fa-solid fa-gear"></i>
+                Settings
+            </li>
+        </ul>
+    </aside>
+
+    <!-- =====================================================
+    Main Content
+    ===================================================== -->
+    <main class="main-content">
+
+        <!-- =====================================================
+        Header
+        ===================================================== -->
+        <div class="page-header">
+            <div>
+                <h2>Contract Details</h2>
+                <p>
+                    Dashboard /
+                    Contracts /
+                    <span>CTR-100245</span>
+                </p>
+            </div>
+
+            <div class="header-actions">
+                <button class="btn btn-outline-primary" id="exportBtn">
+                    <i class="fa-solid fa-download"></i>
+                    Export
+                </button>
+                <button class="btn btn-outline-secondary" id="printBtn">
+                    <i class="fa-solid fa-print"></i>
+                    Print
+                </button>
+                <button class="btn btn-success" id="editContractBtn">
+                    <i class="fa-solid fa-pen"></i>
+                    Edit Contract
+                </button>
+            </div>
+        </div>
+
+        <!-- =====================================================
+        Contract Summary
+        ===================================================== -->
+        <div class="card summary-card mb-4">
+            <div class="card-header">
+                <h5>Contract Summary</h5>
+            </div>
+
+            <div class="card-body">
+                <div class="row g-4">
+
+                    <div class="col-lg-3">
+                        <label>Contract Number</label>
+                        <input class="form-control" value="CTR-100245" readonly>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <label>Status</label>
+                        <input class="form-control" value="Active" readonly>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <label>Customer</label>
+                        <input class="form-control" value="ABC Energy Ltd" readonly>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <label>Business Unit</label>
+                        <input class="form-control" value="Gas Trading" readonly>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <label>Legal Entity</label>
+                        <input class="form-control" value="UGI Energy Services" readonly>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <label>Contract Type</label>
+                        <input class="form-control" value="Commodity" readonly>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <label>Effective Date</label>
+                        <input class="form-control" value="01-Jan-2026" readonly>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <label>Expiration Date</label>
+                        <input class="form-control" value="31-Dec-2026" readonly>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <label>Invoice Method</label>
+                        <input class="form-control" value="Bill On Actuals" readonly>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <label>Price Agreement</label>
+                        <input class="form-control" value="Fixed Commodity Agreement" readonly>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <label>Created By</label>
+                        <input class="form-control" value="Admin" readonly>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <label>Approved By</label>
+                        <input class="form-control" value="Finance Manager" readonly>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- =====================================================
+        Enterprise Tabs
+        ===================================================== -->
+        <ul class="nav nav-tabs enterprise-tabs mb-4">
+            <li class="nav-item">
+                <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#general">
+                    <i class="fa-solid fa-circle-info"></i>
+                    General
+                </button>
+            </li>
+            <li class="nav-item">
+                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#pricing">
+                    <i class="fa-solid fa-pound-sign"></i>
+                    Pricing
+                </button>
+            </li>
+            <li class="nav-item">
+                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#delivery">
+                    <i class="fa-solid fa-location-dot"></i>
+                    Delivery Points
+                </button>
+            </li>
+            <li class="nav-item">
+                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#agreements">
+                    <i class="fa-solid fa-file-contract"></i>
+                    Price Agreements
+                </button>
+            </li>
+            <li class="nav-item">
+                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#documents">
+                    <i class="fa-solid fa-folder-open"></i>
+                    Documents
+                </button>
+            </li>
+            <li class="nav-item">
+                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#activity">
+                    <i class="fa-solid fa-clock-rotate-left"></i>
+                    Activity
+                </button>
+            </li>
+        </ul>
+
+        <div class="tab-content">
+
+            <!-- =====================================================
+                                General Tab
+            ===================================================== -->
+            <div class="tab-pane fade show active" id="general">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>General Information</h5>
+                    </div>
+
+                    <div class="card-body">
+                        <div class="row g-4">
+
+                            <div class="col-lg-4">
+                                <label class="form-label">Legal Entity</label>
+                                <input class="form-control" value="UGI Energy Services" readonly>
+                            </div>
+
+                            <div class="col-lg-4">
+                                <label class="form-label">Business Unit</label>
+                                <input class="form-control" value="Gas Trading" readonly>
+                            </div>
+
+                            <div class="col-lg-4">
+                                <label class="form-label">Customer</label>
+                                <input class="form-control" value="ABC Energy Ltd" readonly>
+                            </div>
+
+                            <div class="col-lg-4">
+                                <label class="form-label">Contract Type</label>
+                                <input class="form-control" value="Commodity" readonly>
+                            </div>
+
+                            <div class="col-lg-4">
+                                <label class="form-label">Contract Category</label>
+                                <input class="form-control" value="Natural Gas Supply" readonly>
+                            </div>
+
+                            <div class="col-lg-4">
+                                <label class="form-label">Invoice Method</label>
+                                <input class="form-control" value="Bill On Actuals" readonly>
+                            </div>
+
+                            <div class="col-lg-4">
+                                <label class="form-label">Payment Terms</label>
+                                <input class="form-control" value="Net 30" readonly>
+                            </div>
+
+                            <div class="col-lg-4">
+                                <label class="form-label">Currency</label>
+                                <input class="form-control" value="GBP" readonly>
+                            </div>
+
+                            <div class="col-lg-4">
+                                <label class="form-label">Accounting Period</label>
+                                <input class="form-control" value="Calendar Month" readonly>
+                            </div>
+
+                            <div class="col-lg-4">
+                                <label class="form-label">Purchase Order</label>
+                                <input class="form-control" value="PO-45879" readonly>
+                            </div>
+
+                            <div class="col-lg-4">
+                                <label class="form-label">Contract Value</label>
+                                <input class="form-control" value="£2,450,000.00" readonly>
+                            </div>
+
+                            <div class="col-lg-4">
+                                <label class="form-label">Settlement Method</label>
+                                <input class="form-control" value="Monthly Settlement" readonly>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <label class="form-label">Billing Address</label>
+                                <textarea class="form-control" rows="4" readonly>ABC Energy Ltd
+London Business Park
+London
+United Kingdom
+</textarea>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <label class="form-label">Delivery Address</label>
+                                <textarea class="form-control" rows="4" readonly>National Grid
+Manchester Delivery Point
+United Kingdom
+</textarea>
+                            </div>
+
+                            <div class="col-lg-12">
+                                <label class="form-label">Contract Notes</label>
+                                <textarea class="form-control" rows="4" readonly>
+Long-term Natural Gas Supply Contract for wholesale customers with fixed pricing and monthly settlement. Transportation charges are calculated separately according to pipeline agreements.
+</textarea>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- =====================================================
+                                Pricing Tab
+            ===================================================== -->
+            <div class="tab-pane fade" id="pricing">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h5>Pricing Information</h5>
+                        <span class="badge bg-success">Current Pricing</span>
+                    </div>
+
+                    <div class="card-body">
+                        <div class="row g-4">
+
+                            <div class="col-lg-3">
+                                <label>Commodity</label>
+                                <input class="form-control" value="Natural Gas" readonly>
+                            </div>
+
+                            <div class="col-lg-3">
+                                <label>Pricing Type</label>
+                                <input class="form-control" value="Fixed" readonly>
+                            </div>
+
+                            <div class="col-lg-3">
+                                <label>Fixed Price</label>
+                                <input class="form-control" value="£42.50 / MMBTU" readonly>
+                            </div>
+
+                            <div class="col-lg-3">
+                                <label>Market Index</label>
+                                <input class="form-control" value="NYMEX" readonly>
+                            </div>
+
+                            <div class="col-lg-3">
+                                <label>Transportation Rate</label>
+                                <input class="form-control" value="£2.10" readonly>
+                            </div>
+
+                            <div class="col-lg-3">
+                                <label>Storage Rate</label>
+                                <input class="form-control" value="£1.75" readonly>
+                            </div>
+
+                            <div class="col-lg-3">
+                                <label>Fuel Loss %</label>
+                                <input class="form-control" value="1.50%" readonly>
+                            </div>
+
+                            <div class="col-lg-3">
+                                <label>Tax Code</label>
+                                <input class="form-control" value="VAT 10%" readonly>
+                            </div>
+
+                            <div class="col-lg-12">
+                                <hr>
+                            </div>
+
+                            <div class="col-lg-12">
+                                <div class="table-responsive">
+                                    <table class="table table-hover table-bordered">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th>Price Component</th>
+                                                <th>Rate</th>
+                                                <th>Unit</th>
+                                                <th>Calculation Method</th>
+                                                <th>Status</th>
+                                            </tr>
+                                        </thead>
+
+                                        <tbody>
+                                            <tr>
+                                                <td>Commodity Charge</td>
+                                                <td>£42.50</td>
+                                                <td>MMBTU</td>
+                                                <td>Fixed</td>
+                                                <td>
+                                                    <span class="badge bg-success">Active</span>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>Transportation Charge</td>
+                                                <td>£2.10</td>
+                                                <td>MMBTU</td>
+                                                <td>Pipeline Tariff</td>
+                                                <td>
+                                                    <span class="badge bg-success">Active</span>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>Storage Fee</td>
+                                                <td>£1.75</td>
+                                                <td>MMBTU</td>
+                                                <td>Monthly</td>
+                                                <td>
+                                                    <span class="badge bg-success">Active</span>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>Fuel Loss</td>
+                                                <td>1.50%</td>
+                                                <td>Percentage</td>
+                                                <td>Calculated</td>
+                                                <td>
+                                                    <span class="badge bg-success">Active</span>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- =====================================================
+                                Delivery Points
+            ===================================================== -->
+            <div class="tab-pane fade" id="delivery">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h5>Delivery Points</h5>
+                        <span class="badge bg-primary">3 Delivery Locations</span>
+                    </div>
+
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover table-bordered align-middle">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>Pipeline</th>
+                                        <th>Receipt Point</th>
+                                        <th>Delivery Point</th>
+                                        <th>Zone</th>
+                                        <th>Capacity</th>
+                                        <th>UOM</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <tr>
+                                        <td>National Grid</td>
+                                        <td>Manchester Hub</td>
+                                        <td>London Distribution</td>
+                                        <td>North Zone</td>
+                                        <td>15,000</td>
+                                        <td>MMBTU</td>
+                                        <td>
+                                            <span class="badge bg-success">Active</span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Transco</td>
+                                        <td>Birmingham Hub</td>
+                                        <td>Liverpool City Gate</td>
+                                        <td>West Zone</td>
+                                        <td>9,500</td>
+                                        <td>MMBTU</td>
+                                        <td>
+                                            <span class="badge bg-success">Active</span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>National Grid</td>
+                                        <td>Leeds Hub</td>
+                                        <td>York Distribution</td>
+                                        <td>East Zone</td>
+                                        <td>7,200</td>
+                                        <td>MMBTU</td>
+                                        <td>
+                                            <span class="badge bg-warning text-dark">Maintenance</span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <hr>
+
+                        <div class="row mt-3">
+                            <div class="col-lg-4">
+                                <div class="border rounded p-3">
+                                    <h6>Total Capacity</h6>
+                                    <h4 class="text-primary">31,700 MMBTU</h4>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4">
+                                <div class="border rounded p-3">
+                                    <h6>Primary Pipeline</h6>
+                                    <h4>National Grid</h4>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4">
+                                <div class="border rounded p-3">
+                                    <h6>Delivery Zones</h6>
+                                    <h4>3 Active Zones</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- =====================================================
+                                Price Agreements
+            ===================================================== -->
+            <div class="tab-pane fade" id="agreements">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h5>Linked Price Agreements</h5>
+                        <button class="btn btn-sm btn-primary">
+                            <i class="fa-solid fa-plus"></i>
+                            Add Agreement
+                        </button>
+                    </div>
+
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover table-bordered">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>Agreement No</th>
+                                        <th>Agreement Type</th>
+                                        <th>Commodity</th>
+                                        <th>Effective Date</th>
+                                        <th>Expiration Date</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <tr>
+                                        <td>AGR-200145</td>
+                                        <td>Fixed Commodity</td>
+                                        <td>Natural Gas</td>
+                                        <td>01-Jan-2026</td>
+                                        <td>31-Dec-2026</td>
+                                        <td>
+                                            <span class="badge bg-success">Active</span>
+                                        </td>
+                                        <td>
+                                            <div class="btn-group">
+                                                <button class="btn btn-sm btn-outline-primary">
+                                                    <i class="fa-solid fa-eye"></i>
+                                                </button>
+                                                <button class="btn btn-sm btn-outline-warning">
+                                                    <i class="fa-solid fa-pen"></i>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>AGR-200146</td>
+                                        <td>Transportation</td>
+                                        <td>Natural Gas</td>
+                                        <td>01-Jan-2026</td>
+                                        <td>31-Dec-2026</td>
+                                        <td>
+                                            <span class="badge bg-success">Active</span>
+                                        </td>
+                                        <td>
+                                            <div class="btn-group">
+                                                <button class="btn btn-sm btn-outline-primary">
+                                                    <i class="fa-solid fa-eye"></i>
+                                                </button>
+                                                <button class="btn btn-sm btn-outline-warning">
+                                                    <i class="fa-solid fa-pen"></i>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>AGR-200147</td>
+                                        <td>Storage</td>
+                                        <td>Natural Gas</td>
+                                        <td>01-Mar-2026</td>
+                                        <td>28-Feb-2027</td>
+                                        <td>
+                                            <span class="badge bg-warning text-dark">Pending</span>
+                                        </td>
+                                        <td>
+                                            <div class="btn-group">
+                                                <button class="btn btn-sm btn-outline-primary">
+                                                    <i class="fa-solid fa-eye"></i>
+                                                </button>
+                                                <button class="btn btn-sm btn-outline-warning">
+                                                    <i class="fa-solid fa-pen"></i>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <hr>
+
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="card border-0 bg-light">
+                                    <div class="card-body text-center">
+                                        <h6>Active Agreements</h6>
+                                        <h3 class="text-success">2</h3>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4">
+                                <div class="card border-0 bg-light">
+                                    <div class="card-body text-center">
+                                        <h6>Pending Approval</h6>
+                                        <h3 class="text-warning">1</h3>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4">
+                                <div class="card border-0 bg-light">
+                                    <div class="card-body text-center">
+                                        <h6>Contract Value</h6>
+                                        <h3 class="text-primary">£2.45M</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- =====================================================
+                                Documents
+            ===================================================== -->
+            <div class="tab-pane fade" id="documents">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h5>Contract Documents</h5>
+                        <button class="btn btn-primary" id="uploadDocumentBtn">
+                            <i class="fa-solid fa-upload"></i>
+                            Upload Document
+                        </button>
+                    </div>
+
+                    <div class="card-body p-0">
+                        <div class="table-responsive">
+                            <table class="table table-hover align-middle">
+                                <thead>
+                                    <tr>
+                                        <th>Document Name</th>
+                                        <th>Category</th>
+                                        <th>Uploaded By</th>
+                                        <th>Upload Date</th>
+                                        <th>Status</th>
+                                        <th width="180">Actions</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <tr>
+                                        <td>Master Contract.pdf</td>
+                                        <td>Contract</td>
+                                        <td>Admin</td>
+                                        <td>01-Jan-2026</td>
+                                        <td>
+                                            <span class="badge bg-success">Verified</span>
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-sm btn-outline-primary">
+                                                <i class="fa-solid fa-download"></i>
+                                            </button>
+                                            <button class="btn btn-sm btn-outline-secondary">
+                                                <i class="fa-solid fa-eye"></i>
+                                            </button>
+                                            <button class="btn btn-sm btn-outline-danger">
+                                                <i class="fa-solid fa-trash"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Signed Agreement.pdf</td>
+                                        <td>Legal</td>
+                                        <td>Finance</td>
+                                        <td>02-Jan-2026</td>
+                                        <td>
+                                            <span class="badge bg-success">Verified</span>
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-sm btn-outline-primary">
+                                                <i class="fa-solid fa-download"></i>
+                                            </button>
+                                            <button class="btn btn-sm btn-outline-secondary">
+                                                <i class="fa-solid fa-eye"></i>
+                                            </button>
+                                            <button class="btn btn-sm btn-outline-danger">
+                                                <i class="fa-solid fa-trash"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Supporting Document.xlsx</td>
+                                        <td>Pricing</td>
+                                        <td>Operations</td>
+                                        <td>05-Jan-2026</td>
+                                        <td>
+                                            <span class="badge bg-warning text-dark">Pending Review</span>
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-sm btn-outline-primary">
+                                                <i class="fa-solid fa-download"></i>
+                                            </button>
+                                            <button class="btn btn-sm btn-outline-secondary">
+                                                <i class="fa-solid fa-eye"></i>
+                                            </button>
+                                            <button class="btn btn-sm btn-outline-danger">
+                                                <i class="fa-solid fa-trash"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- =====================================================
+                                Activity
+            ===================================================== -->
+            <div class="tab-pane fade" id="activity">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Activity Timeline</h5>
+                    </div>
+
+                    <div class="card-body">
+                        <div class="timeline">
+
+                            <div class="timeline-item">
+                                <div class="timeline-icon bg-primary">
+                                    <i class="fa-solid fa-plus"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <h6>Contract Created</h6>
+                                    <p>Contract created by Admin.</p>
+                                    <small>01-Jan-2026 09:30 AM</small>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-icon bg-success">
+                                    <i class="fa-solid fa-check"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <h6>Contract Approved</h6>
+                                    <p>Approved by Finance Manager.</p>
+                                    <small>02-Jan-2026 02:45 PM</small>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-icon bg-info">
+                                    <i class="fa-solid fa-pen"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <h6>Price Agreement Updated</h6>
+                                    <p>Commodity pricing updated.</p>
+                                    <small>10-Jan-2026 11:20 AM</small>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-icon bg-warning">
+                                    <i class="fa-solid fa-file-arrow-up"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <h6>Document Uploaded</h6>
+                                    <p>Supporting pricing document added.</p>
+                                    <small>15-Jan-2026 04:10 PM</small>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- =====================================================
+        Quick Actions
+        ===================================================== -->
+        <div class="row mt-4">
+
+            <div class="col-lg-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Quick Actions</h5>
+                    </div>
+
+                    <div class="card-body d-grid gap-2">
+                        <button class="btn btn-success">
+                            <i class="fa-solid fa-pen"></i>
+                            Edit Contract
+                        </button>
+                        <button class="btn btn-primary">
+                            <i class="fa-solid fa-copy"></i>
+                            Duplicate Contract
+                        </button>
+                        <button class="btn btn-info text-white">
+                            <i class="fa-solid fa-file-invoice-dollar"></i>
+                            Generate Invoice
+                        </button>
+                        <button class="btn btn-outline-dark">
+                            <i class="fa-solid fa-print"></i>
+                            Print
+                        </button>
+                        <button class="btn btn-outline-danger">
+                            <i class="fa-solid fa-ban"></i>
+                            Terminate Contract
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-8">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Related Records</h5>
+                    </div>
+
+                    <div class="card-body">
+                        <div class="row g-3">
+
+                            <div class="col-md-4">
+                                <div class="border rounded p-3">
+                                    <h6>Customer</h6>
+                                    <p class="mb-0">ABC Energy Ltd</p>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="border rounded p-3">
+                                    <h6>Invoices</h6>
+                                    <p class="mb-0">15 Generated</p>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="border rounded p-3">
+                                    <h6>Price Agreements</h6>
+                                    <p class="mb-0">3 Active</p>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="border rounded p-3">
+                                    <h6>Delivery Points</h6>
+                                    <p class="mb-0">3 Locations</p>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="border rounded p-3">
+                                    <h6>Settlement</h6>
+                                    <p class="mb-0">Monthly</p>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="border rounded p-3">
+                                    <h6>Contract Value</h6>
+                                    <p class="mb-0">£2.45 Million</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- =====================================================
+        Footer
+        ===================================================== -->
+        <div class="page-footer">
+            <button class="btn btn-outline-secondary">
+                Back
+            </button>
+            <button class="btn btn-primary">
+                Export
+            </button>
+            <button class="btn btn-success">
+                Edit Contract
+            </button>
+        </div>
+
+    </main>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../assets/js/contract-details.js"></script>
+
+</body>
+
+</html>
