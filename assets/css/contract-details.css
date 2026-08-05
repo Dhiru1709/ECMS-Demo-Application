@@ -1,0 +1,399 @@
+/* ==========================================================
+   ECMS - Contract Details
+   contract-details.css
+========================================================== */
+
+/* ==========================
+   Global
+========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#f4f6f9;
+    font-family:"Segoe UI",Tahoma,Geneva,Verdana,sans-serif;
+    color:#343a40;
+}
+
+.wrapper{
+    display:flex;
+    min-height:100vh;
+}
+
+/* ==========================
+   Sidebar
+========================== */
+
+.sidebar{
+    width:250px;
+    background:#1f2937;
+    color:#fff;
+    position:fixed;
+    left:0;
+    top:0;
+    bottom:0;
+    overflow:auto;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:700;
+    text-align:center;
+    padding:25px;
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.sidebar ul{
+    list-style:none;
+    padding:20px 0;
+}
+
+.sidebar li{
+    padding:15px 25px;
+    cursor:pointer;
+    transition:.25s;
+}
+
+.sidebar li i{
+    width:24px;
+}
+
+.sidebar li:hover{
+    background:#374151;
+}
+
+.sidebar .active{
+    background:#0d6efd;
+}
+
+/* ==========================
+   Main Content
+========================== */
+
+.main-content{
+    margin-left:250px;
+    width:calc(100% - 250px);
+    padding:30px;
+}
+
+/* ==========================
+   Header
+========================== */
+
+.page-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:25px;
+}
+
+.page-header h2{
+    font-weight:700;
+}
+
+.page-header p{
+    color:#6c757d;
+    margin-top:5px;
+}
+
+.header-actions{
+    display:flex;
+    gap:10px;
+}
+
+/* ==========================
+   Cards
+========================== */
+
+.card{
+    border:none;
+    border-radius:12px;
+    box-shadow:0 5px 18px rgba(0,0,0,.06);
+}
+
+.card-header{
+    background:#fff;
+    border-bottom:1px solid #ececec;
+    padding:18px 22px;
+}
+
+.card-header h5{
+    margin:0;
+    font-weight:600;
+}
+
+.card-body{
+    padding:22px;
+}
+
+/* ==========================
+   Summary Card
+========================== */
+
+.summary-card input{
+    background:#f8f9fa;
+}
+
+.summary-card label{
+    font-size:13px;
+    font-weight:600;
+    margin-bottom:6px;
+    color:#495057;
+}
+
+/* ==========================
+   Enterprise Tabs
+========================== */
+
+.enterprise-tabs{
+    border-bottom:2px solid #dee2e6;
+}
+
+.enterprise-tabs .nav-link{
+    color:#495057;
+    border:none;
+    padding:14px 20px;
+    font-weight:600;
+}
+
+.enterprise-tabs .nav-link.active{
+    color:#0d6efd;
+    border-bottom:3px solid #0d6efd;
+    background:#fff;
+}
+
+.enterprise-tabs .nav-link:hover{
+    color:#0d6efd;
+}
+
+/* ==========================
+   Forms
+========================== */
+
+.form-control,
+.form-select{
+    border-radius:8px;
+    min-height:44px;
+}
+
+.form-control:focus,
+.form-select:focus{
+    border-color:#0d6efd;
+    box-shadow:0 0 0 .15rem rgba(13,110,253,.15);
+}
+
+textarea.form-control{
+    min-height:110px;
+    resize:vertical;
+}
+
+/* ==========================
+   Tables
+========================== */
+
+.table{
+    margin-bottom:0;
+}
+
+.table thead{
+    background:#f8f9fa;
+}
+
+.table th{
+    font-size:14px;
+    font-weight:700;
+    white-space:nowrap;
+    vertical-align:middle;
+}
+
+.table td{
+    vertical-align:middle;
+}
+
+.table-hover tbody tr:hover{
+    background:#f8fbff;
+}
+
+/* ==========================
+   Badges
+========================== */
+
+.badge{
+    padding:7px 12px;
+    font-size:12px;
+    border-radius:20px;
+}
+
+/* ==========================
+   Buttons
+========================== */
+
+.btn{
+    border-radius:8px;
+    font-weight:500;
+}
+
+.btn-group .btn{
+    padding:5px 10px;
+}
+
+/* ==========================
+   Timeline
+========================== */
+
+.timeline{
+    position:relative;
+    padding-left:30px;
+}
+
+.timeline::before{
+    content:"";
+    position:absolute;
+    left:16px;
+    top:0;
+    bottom:0;
+    width:2px;
+    background:#dee2e6;
+}
+
+.timeline-item{
+    position:relative;
+    margin-bottom:30px;
+}
+
+.timeline-icon{
+    position:absolute;
+    left:-30px;
+    width:32px;
+    height:32px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#fff;
+    font-size:14px;
+}
+
+.timeline-content{
+    background:#fff;
+    border:1px solid #ececec;
+    border-radius:10px;
+    padding:16px;
+}
+
+.timeline-content h6{
+    margin-bottom:6px;
+    font-weight:600;
+}
+
+.timeline-content p{
+    margin-bottom:6px;
+    color:#6c757d;
+}
+
+.timeline-content small{
+    color:#999;
+}
+
+/* ==========================
+   Related Records
+========================== */
+
+.border.rounded{
+    transition:.25s;
+    background:#fff;
+}
+
+.border.rounded:hover{
+    transform:translateY(-4px);
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+
+/* ==========================
+   Quick Actions
+========================== */
+
+.d-grid .btn{
+    margin-bottom:8px;
+}
+
+/* ==========================
+   Footer
+========================== */
+
+.page-footer{
+    display:flex;
+    justify-content:flex-end;
+    gap:12px;
+    margin-top:30px;
+}
+
+/* ==========================
+   Responsive
+========================== */
+
+@media(max-width:992px){
+
+.sidebar{
+    width:80px;
+}
+
+.logo{
+    font-size:18px;
+    padding:18px;
+}
+
+.sidebar li{
+    font-size:0;
+    text-align:center;
+    padding:18px 0;
+}
+
+.sidebar li i{
+    font-size:18px;
+}
+
+.main-content{
+    margin-left:80px;
+    width:calc(100% - 80px);
+}
+
+.page-header{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:15px;
+}
+
+.header-actions{
+    width:100%;
+}
+
+.header-actions .btn{
+    flex:1;
+}
+
+}
+
+@media(max-width:768px){
+
+.page-header h2{
+    font-size:24px;
+}
+
+.table-responsive{
+    overflow-x:auto;
+}
+
+.page-footer{
+    flex-direction:column;
+}
+
+.page-footer .btn{
+    width:100%;
+}
+
+}
