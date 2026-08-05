@@ -1,0 +1,495 @@
+/* ==========================================================
+   ECMS - Contract Management
+   contracts.css
+========================================================== */
+
+/* ==========================
+   Global
+========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#f4f6f9;
+    font-family:"Segoe UI",Tahoma,Geneva,Verdana,sans-serif;
+    color:#343a40;
+}
+
+.wrapper{
+    display:flex;
+    min-height:100vh;
+}
+
+/* ==========================
+   Sidebar
+========================== */
+
+.sidebar{
+
+    width:250px;
+
+    background:#1f2937;
+
+    color:#fff;
+
+    position:fixed;
+
+    left:0;
+
+    top:0;
+
+    bottom:0;
+
+    overflow:auto;
+
+}
+
+.logo{
+
+    font-size:24px;
+
+    font-weight:700;
+
+    text-align:center;
+
+    padding:25px;
+
+    border-bottom:1px solid rgba(255,255,255,.1);
+
+}
+
+.sidebar ul{
+
+    list-style:none;
+
+    padding:20px 0;
+
+}
+
+.sidebar li{
+
+    padding:14px 25px;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.sidebar li i{
+
+    width:25px;
+
+}
+
+.sidebar li:hover{
+
+    background:#374151;
+
+}
+
+.sidebar .active{
+
+    background:#0d6efd;
+
+}
+
+/* ==========================
+   Main Content
+========================== */
+
+.main-content{
+
+    margin-left:250px;
+
+    width:calc(100% - 250px);
+
+    padding:30px;
+
+}
+
+/* ==========================
+   Header
+========================== */
+
+.page-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:25px;
+
+}
+
+.page-header h2{
+
+    font-weight:700;
+
+}
+
+.page-header p{
+
+    color:#6c757d;
+
+    margin-top:5px;
+
+}
+
+.header-actions{
+
+    display:flex;
+
+    gap:10px;
+
+}
+
+/* ==========================
+   KPI Cards
+========================== */
+
+.kpi-card{
+
+    border:none;
+
+    border-radius:12px;
+
+    transition:.3s;
+
+    box-shadow:0 4px 15px rgba(0,0,0,.05);
+
+}
+
+.kpi-card:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 10px 25px rgba(0,0,0,.12);
+
+}
+
+.kpi-icon{
+
+    width:55px;
+
+    height:55px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    color:#fff;
+
+    font-size:22px;
+
+    margin-bottom:15px;
+
+}
+
+.kpi-card h6{
+
+    color:#6c757d;
+
+    margin-bottom:10px;
+
+}
+
+.kpi-card h2{
+
+    font-weight:700;
+
+    margin-bottom:5px;
+
+}
+
+/* ==========================
+   Cards
+========================== */
+
+.card{
+
+    border:none;
+
+    border-radius:12px;
+
+    box-shadow:0 4px 15px rgba(0,0,0,.05);
+
+}
+
+.card-header{
+
+    background:#fff;
+
+    border-bottom:1px solid #eee;
+
+    padding:18px 20px;
+
+    font-weight:600;
+
+}
+
+.card-body{
+
+    padding:20px;
+
+}
+
+/* ==========================
+   Filters
+========================== */
+
+label{
+
+    font-size:14px;
+
+    font-weight:600;
+
+    margin-bottom:6px;
+
+}
+
+.form-control,
+
+.form-select{
+
+    border-radius:8px;
+
+    height:44px;
+
+}
+
+.form-control:focus,
+
+.form-select:focus{
+
+    border-color:#0d6efd;
+
+    box-shadow:0 0 0 .15rem rgba(13,110,253,.2);
+
+}
+
+/* ==========================
+   Buttons
+========================== */
+
+.btn{
+
+    border-radius:8px;
+
+    font-weight:500;
+
+}
+
+.btn-group .btn{
+
+    padding:5px 10px;
+
+}
+
+/* ==========================
+   Table
+========================== */
+
+.table{
+
+    margin-bottom:0;
+
+}
+
+.table thead{
+
+    background:#f8f9fa;
+
+}
+
+.table th{
+
+    font-size:14px;
+
+    font-weight:700;
+
+    white-space:nowrap;
+
+    vertical-align:middle;
+
+}
+
+.table td{
+
+    vertical-align:middle;
+
+    font-size:14px;
+
+}
+
+.table tbody tr{
+
+    transition:.2s;
+
+}
+
+.table tbody tr:hover{
+
+    background:#f8fbff;
+
+}
+
+/* ==========================
+   Status Badges
+========================== */
+
+.badge{
+
+    padding:8px 12px;
+
+    font-size:12px;
+
+    border-radius:20px;
+
+}
+
+/* ==========================
+   Pagination
+========================== */
+
+.pagination{
+
+    margin:0;
+
+}
+
+.page-link{
+
+    border-radius:6px;
+
+    margin:0 2px;
+
+}
+
+/* ==========================
+   Links
+========================== */
+
+a{
+
+    text-decoration:none;
+
+}
+
+a:hover{
+
+    text-decoration:underline;
+
+}
+
+/* ==========================
+   Responsive
+========================== */
+
+@media(max-width:992px){
+
+.sidebar{
+
+    width:80px;
+
+}
+
+.sidebar .logo{
+
+    font-size:18px;
+
+    padding:18px;
+
+}
+
+.sidebar li{
+
+    text-align:center;
+
+    padding:18px 0;
+
+}
+
+.sidebar li i{
+
+    margin:0;
+
+}
+
+.sidebar li{
+
+    font-size:0;
+
+}
+
+.sidebar li i{
+
+    font-size:18px;
+
+}
+
+.main-content{
+
+    margin-left:80px;
+
+    width:calc(100% - 80px);
+
+}
+
+.page-header{
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+    gap:15px;
+
+}
+
+.header-actions{
+
+    width:100%;
+
+}
+
+.header-actions .btn{
+
+    flex:1;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.row>.col-lg-3,
+
+.row>.col-lg-4{
+
+    margin-bottom:15px;
+
+}
+
+.table-responsive{
+
+    overflow-x:auto;
+
+}
+
+.page-header h2{
+
+    font-size:24px;
+
+}
+
+}
